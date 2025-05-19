@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dddho5lhend5g"]
+
+[ext_resource type="Shader" uid="uid://evepjf3e3cxi" path="res://scrpits/kaleidoscope_scene.gdshader" id="1_d3a76"]
+[ext_resource type="Script" uid="uid://cisapaces3ssl" path="res://scrpits/color_rect.gd" id="2_d3a76"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_janyi"]
+shader = ExtResource("1_d3a76")
+shader_parameter/time = 0.0
+shader_parameter/pixelation = 120.0
+
+[node name="KaleidoscopeScene" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_janyi")
+offset_top = 4.0
+offset_right = 1151.0
+offset_bottom = 644.0
+script = ExtResource("2_d3a76")
