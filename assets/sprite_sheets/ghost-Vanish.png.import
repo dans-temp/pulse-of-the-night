@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2pwcv5rkf2br"
-path="res://.godot/imported/ghost-Idle-sheet.png-ef851a34100e7537d8a0d960d07a8cb3.ctex"
+uid="uid://t3l1hdrfb0xg"
+path="res://.godot/imported/ghost-Vanish.png-0db372142eaab16cb32291814bd070f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ghost-Idle-sheet.png"
-dest_files=["res://.godot/imported/ghost-Idle-sheet.png-ef851a34100e7537d8a0d960d07a8cb3.ctex"]
+source_file="res://assets/sprite_sheets/ghost-Vanish.png"
+dest_files=["res://.godot/imported/ghost-Vanish.png-0db372142eaab16cb32291814bd070f8.ctex"]
 
 [params]
 
