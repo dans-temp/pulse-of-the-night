@@ -150,8 +150,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_bbnym"]
-resource_name = "death"
+[sub_resource type="Animation" id="Animation_pe3fk"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -165,8 +165,8 @@ tracks/0/keys = {
 "values": [&"death"]
 }
 
-[sub_resource type="Animation" id="Animation_pe3fk"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_bbnym"]
+resource_name = "death"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -190,7 +190,7 @@ _data = {
 size = Vector2(39, 40.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_veat2"]
-size = Vector2(76.5, 84)
+size = Vector2(52, 84)
 
 [node name="ghost" type="RigidBody2D" groups=["Baddies"]]
 collision_layer = 66
@@ -215,13 +215,12 @@ shape = SubResource("RectangleShape2D_4pqta")
 
 [node name="HitSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_bbnym")
-volume_db = 9.0
+volume_db = 7.225
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-visible = false
-position = Vector2(-0.25, 17)
+position = Vector2(-2, 17)
 shape = SubResource("RectangleShape2D_veat2")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://byt1wmrsf5iwp"]
+[gd_scene load_steps=37 format=4 uid="uid://byt1wmrsf5iwp"]
 
 [ext_resource type="Script" uid="uid://ca750cdx72mqe" path="res://scrpits/player.gd" id="1_bgcxa"]
 [ext_resource type="Texture2D" uid="uid://3aadh0q7rp5i" path="res://assets/sky-9.jpg" id="1_sek5r"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d01ep3vyynwed" path="res://assets/v-hunter-attack.png" id="5_i1yi8"]
 [ext_resource type="Texture2D" uid="uid://j8dj64884spe" path="res://assets/testy test.png" id="5_sek5r"]
 [ext_resource type="Texture2D" uid="uid://qcm0nts3qjyd" path="res://assets/tileset_forest-sheet-blue.png" id="5_xr56k"]
+[ext_resource type="Texture2D" uid="uid://2ugjdd2o2k7v" path="res://assets/sprite_sheets/v-hunter-jump.png" id="7_3knxq"]
 [ext_resource type="PackedScene" uid="uid://bgx0bcnj7l6jn" path="res://scenes/ghost.tscn" id="8_qm7rg"]
 [ext_resource type="AudioStream" uid="uid://dijclag6oihf4" path="res://assets/music/Dance of the Night Fangs.mp3" id="9_0nboi"]
 
@@ -26,6 +27,38 @@ region = Rect2(160, 0, 80, 64)
 atlas = ExtResource("5_i1yi8")
 region = Rect2(240, 0, 80, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_di0nb"]
+atlas = ExtResource("7_3knxq")
+region = Rect2(0, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyn53"]
+atlas = ExtResource("7_3knxq")
+region = Rect2(80, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwbj1"]
+atlas = ExtResource("7_3knxq")
+region = Rect2(160, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1j6r"]
+atlas = ExtResource("7_3knxq")
+region = Rect2(240, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3akcx"]
+atlas = ExtResource("7_3knxq")
+region = Rect2(320, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h1w1"]
+atlas = ExtResource("7_3knxq")
+region = Rect2(400, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qavbn"]
+atlas = ExtResource("7_3knxq")
+region = Rect2(480, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3knxq"]
+atlas = ExtResource("5_sek5r")
+region = Rect2(320, 0, 80, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_sek5r"]
 atlas = ExtResource("5_sek5r")
 region = Rect2(0, 0, 80, 64)
@@ -41,10 +74,6 @@ region = Rect2(160, 0, 80, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_0nboi"]
 atlas = ExtResource("5_sek5r")
 region = Rect2(240, 0, 80, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3knxq"]
-atlas = ExtResource("5_sek5r")
-region = Rect2(320, 0, 80, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_di0nb"]
 animations = [{
@@ -67,6 +96,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_di0nb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyn53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwbj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1j6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3akcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h1w1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qavbn")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3knxq")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_sek5r")
 }, {
 "duration": 1.0,
@@ -77,9 +135,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0nboi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3knxq")
 }],
 "loop": true,
 "name": &"run",
@@ -87,7 +142,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1yi8"]
-size = Vector2(22.25, 43.25)
+size = Vector2(22.25, 41.625)
 
 [sub_resource type="Animation" id="Animation_i1yi8"]
 length = 0.001
@@ -120,14 +175,33 @@ tracks/0/keys = {
 "values": [&"attack", &"attack"]
 }
 
+[sub_resource type="Animation" id="Animation_3knxq"]
+resource_name = "jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jump"]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pyn53"]
 _data = {
 &"RESET": SubResource("Animation_i1yi8"),
-&"attack": SubResource("Animation_di0nb")
+&"attack": SubResource("Animation_di0nb"),
+&"jump": SubResource("Animation_3knxq")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm7rg"]
-size = Vector2(25.5, 46)
+size = Vector2(23.25, 41.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3knxq"]
+size = Vector2(20.25, 21.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sek5r"]
 texture = ExtResource("5_xr56k")
@@ -696,16 +770,13 @@ position = Vector2(4085, 445)
 position = Vector2(2457, 318)
 
 [node name="ghost5" parent="Baddies" instance=ExtResource("8_qm7rg")]
-position = Vector2(3215, 445)
+position = Vector2(4545, 441)
 
 [node name="ghost6" parent="Baddies" instance=ExtResource("8_qm7rg")]
 position = Vector2(3474, 445)
 
 [node name="ghost7" parent="Baddies" instance=ExtResource("8_qm7rg")]
 position = Vector2(5056, 443)
-
-[node name="ghost8" parent="Baddies" instance=ExtResource("8_qm7rg")]
-position = Vector2(4186, 443)
 
 [node name="ghost9" parent="Baddies" instance=ExtResource("8_qm7rg")]
 position = Vector2(4445, 443)
@@ -719,11 +790,32 @@ position = Vector2(3024, 447)
 [node name="ghost12" parent="Baddies" instance=ExtResource("8_qm7rg")]
 position = Vector2(3283, 447)
 
-[node name="ghost13" parent="Baddies" instance=ExtResource("8_qm7rg")]
-position = Vector2(3995, 445)
-
 [node name="ghost14" parent="Baddies" instance=ExtResource("8_qm7rg")]
 position = Vector2(4254, 445)
+
+[node name="ghost13" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(6464, 320)
+
+[node name="ghost15" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(5725, 322)
+
+[node name="ghost16" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(6176, 445)
+
+[node name="ghost17" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(6824, 318)
+
+[node name="ghost8" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(5902, 445)
+
+[node name="ghost18" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(5521, 445)
+
+[node name="ghost19" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(7334, 445)
+
+[node name="ghost20" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(7614, 312)
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(0, 400)
@@ -738,7 +830,7 @@ animation = &"attack"
 autoplay = "run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, 11)
+position = Vector2(0, 11.8125)
 shape = SubResource("RectangleShape2D_i1yi8")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -755,8 +847,17 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/AttackHitbox" groups=["AttackHitBox"]]
-position = Vector2(28, 9.5)
+position = Vector2(27.5, 11.75)
 shape = SubResource("RectangleShape2D_qm7rg")
+disabled = true
+
+[node name="UpperCutHitBox" type="Area2D" parent="Player" groups=["AttackHitBox"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Player/UpperCutHitBox" groups=["AttackHitBox"]]
+position = Vector2(28, -27.25)
+shape = SubResource("RectangleShape2D_3knxq")
 disabled = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -771,3 +872,4 @@ autoplay = true
 
 [connection signal="animation_finished" from="Player/AnimationPlayer" to="Player" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Player/AttackHitbox" to="Player" method="_on_attack_hitbox_body_entered"]
+[connection signal="body_entered" from="Player/UpperCutHitBox" to="Player" method="_on_upper_cut_hit_box_body_entered"]
