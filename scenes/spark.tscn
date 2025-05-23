@@ -51,6 +51,6 @@ script = ExtResource("1_vit8h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 2
-scale = Vector2(2.5, 2.5)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_x2ocf")
 autoplay = "default"

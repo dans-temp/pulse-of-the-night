@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed := 500.0
 @export var gravity := 2500.0
-@export var jump_velocity := -550.0
+@export var jump_velocity := -842
 @export var attack_cooldown := 0.50 # seconds
 
 var can_attack := true
@@ -11,6 +11,8 @@ var current_attack_id := 0
 var attack_id := current_attack_id
 var current_hang_id := 0
 var peak_jump_height := 0
+var is_hurt := false
+var in_attack_animation := false
 
 var is_hanging := false
 
@@ -22,8 +24,9 @@ func _physics_process(delta):
 	velocity.x = speed
 	
 	# Handle animations
-	if is_on_floor() and not is_attacking:
-		$AnimatedSprite2D.play("run")		
+	if is_on_floor() and not is_attacking and not is_hurt:
+		if $AnimatedSprite2D.animation != "attack" or $AnimatedSprite2D.frame == $AnimatedSprite2D.sprite_frames.get_frame_count("attack") - 1:
+			$AnimatedSprite2D.play("run")
 
 	# Jump input
 	if Input.is_action_just_pressed("ui_up") and can_attack and not is_attacking:
@@ -36,12 +39,12 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_right") and can_attack and not is_attacking:
 		_attack('')
 
-
 	move_and_slide()
 
 func _jump():
-	velocity.y = jump_velocity * 1.5  # Faster ascent
-	peak_jump_height = position.y - 120
+	velocity.y = jump_velocity  # Faster ascent
+	peak_jump_height = position.y - 130
+	$AnimationPlayer.stop()	
 	$AnimationPlayer.play("jump")
 	_jump_attack()
 
@@ -58,7 +61,7 @@ func _start_hang_time() -> void:
 	position.y = peak_jump_height
 	is_hanging = true
 
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.3).timeout
 	if hang_id != current_hang_id:
 		return
 
@@ -77,17 +80,25 @@ func _air_attack() -> void:
 	_attack('air')
 
 func _attack(attack_type) -> void:
-	print("Player X: ", position.x, " Y: ", position.y)
+	#print("Player X: ", position.x, " Y: ", position.y)
 
+	var this_attack_id
+#	#some jank to stop air attaks that slam ground from hitting ariel baddies
 	if not is_on_floor() and attack_type != 'air':
 		velocity.y = 1500
 		is_hanging = false
 		current_hang_id += 1
-
-	_start_attack_cooldown()
-	var this_attack_id = attack_id  # Capture current attack ID
-
-	$AnimationPlayer.play("attack")
+		_start_attack_cooldown()
+		this_attack_id = attack_id
+		await get_tree().create_timer(0.05).timeout
+	else:
+		_start_attack_cooldown()
+		this_attack_id = attack_id
+	
+	if $AnimatedSprite2D.animation == "attack":
+		$AnimatedSprite2D.stop()
+		
+	$AnimatedSprite2D.play("attack")
 
 	# Enable hitbox
 	$AttackHitbox/CollisionShape2D2.disabled = false
@@ -113,7 +124,7 @@ func _end_attack_cooldown() -> void:
 		
 
 func _on_animation_player_animation_finished(animation: String) -> void:
-	if animation == "attack" and attack_id == current_attack_id:
+	if $AnimatedSprite2D.animation == "attack" and attack_id == current_attack_id:
 		is_attacking = false
 		$AnimatedSprite2D.play("run")
 
@@ -126,6 +137,7 @@ func _on_attack_hitbox_body_entered(body: Node2D) -> void:
 		var spark_scene = preload("res://scenes/spark.tscn")
 		var spark = spark_scene.instantiate()
 		spark.global_position = body.global_position
+		spark.global_position.x + 20
 		get_tree().current_scene.add_child(spark)
 
 		# Reset attack and cancel cooldown timer
@@ -143,6 +155,7 @@ func _on_upper_cut_hit_box_body_entered(body: Node2D) -> void:
 		var spark_scene = preload("res://scenes/spark.tscn")
 		var spark = spark_scene.instantiate()
 		spark.global_position = body.global_position
+		spark.global_position.x + 20
 		get_tree().current_scene.add_child(spark)
 		# Reset attack and cancel cooldown timer
 		can_attack = true
@@ -152,11 +165,18 @@ func _on_upper_cut_hit_box_body_entered(body: Node2D) -> void:
 
 
 func hurt():
-	# Flash white for one frame
 	can_attack = true
 	is_attacking = false
 	current_attack_id += 1
-		
+	
+	is_hurt = true
+	$AnimatedSprite2D.play("hurt")
 	$AnimatedSprite2D.self_modulate = Color(10, 10, 10)
-	await get_tree().create_timer(0.15).timeout
+	$AudioStreamPlayer2D.play()
+
+	await get_tree().create_timer(0.10).timeout
 	$AnimatedSprite2D.self_modulate = Color(1, 1, 1, 1)
+
+	await get_tree().create_timer(0.20).timeout
+	is_hurt = false
+	

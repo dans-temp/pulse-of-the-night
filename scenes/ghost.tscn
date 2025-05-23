@@ -190,7 +190,7 @@ _data = {
 size = Vector2(16.5, 40.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_veat2"]
-size = Vector2(49, 84)
+size = Vector2(17, 84)
 
 [node name="ghost" type="RigidBody2D" groups=["Baddies"]]
 collision_layer = 66
@@ -215,12 +215,12 @@ shape = SubResource("RectangleShape2D_4pqta")
 
 [node name="HitSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_bbnym")
-volume_db = 7.225
+volume_db = 8.0
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-0.5, 17)
+position = Vector2(-16.5, 17)
 shape = SubResource("RectangleShape2D_veat2")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
