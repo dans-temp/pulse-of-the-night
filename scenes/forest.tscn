@@ -210,21 +210,6 @@ tracks/0/keys = {
 "values": [&"attack", &"attack"]
 }
 
-[sub_resource type="Animation" id="Animation_3knxq"]
-resource_name = "jump"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"jump"]
-}
-
 [sub_resource type="Animation" id="Animation_ercsu"]
 resource_name = "hurt"
 tracks/0/type = "value"
@@ -238,6 +223,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"attack"]
+}
+
+[sub_resource type="Animation" id="Animation_3knxq"]
+resource_name = "jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jump"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pyn53"]
@@ -762,7 +762,7 @@ motion_scale = Vector2(0.05, 1)
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(9000, 159)
+position = Vector2(8999.5, 172)
 scale = Vector2(1.21175, 1.21175)
 texture = ExtResource("2_sek5r")
 region_enabled = true
@@ -877,6 +877,87 @@ position = Vector2(8463, 440)
 [node name="ghost23" parent="Baddies" instance=ExtResource("8_qm7rg")]
 position = Vector2(8120, 330)
 
+[node name="ghost24" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(12167, 439)
+
+[node name="ghost25" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(6028, 438)
+
+[node name="ghost26" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(7797, 324)
+
+[node name="ghost27" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(7966, 325)
+
+[node name="ghost28" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(12868, 326)
+
+[node name="ghost29" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(13536, 447)
+
+[node name="ghost30" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(14219, 299)
+
+[node name="ghost31" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(14890, 445)
+
+[node name="ghost32" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(15579, 318)
+
+[node name="ghost33" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(16241, 439)
+
+[node name="ghost34" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(16959, 322)
+
+[node name="ghost35" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(17110, 320)
+
+[node name="ghost36" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(17272, 318)
+
+[node name="ghost37" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(17429, 320)
+
+[node name="ghost38" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(17588, 446)
+
+[node name="ghost39" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(18215, 446)
+
+[node name="ghost40" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(11913, 445)
+
+[node name="ghost43" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(18859, 321)
+
+[node name="ghost44" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(19542, 436)
+
+[node name="ghost45" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(20189, 291)
+
+[node name="ghost46" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(20852, 446)
+
+[node name="ghost47" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(21535, 322)
+
+[node name="ghost41" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(22169, 313)
+
+[node name="ghost42" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(22357, 306)
+
+[node name="ghost49" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(22549, 307)
+
+[node name="ghost50" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(22730, 305)
+
+[node name="ghost51" parent="Baddies" instance=ExtResource("8_qm7rg")]
+position = Vector2(22901, 449)
+
 [node name="Player" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(0, 400)
 scale = Vector2(2, 2)
@@ -937,15 +1018,6 @@ tile_set = SubResource("TileSet_i1yi8")
 stream = ExtResource("9_0nboi")
 volume_db = -3.0
 autoplay = true
-
-[node name="ghost18" parent="." instance=ExtResource("8_qm7rg")]
-position = Vector2(6028, 438)
-
-[node name="ghost19" parent="." instance=ExtResource("8_qm7rg")]
-position = Vector2(7797, 324)
-
-[node name="ghost20" parent="." instance=ExtResource("8_qm7rg")]
-position = Vector2(7966, 325)
 
 [connection signal="animation_finished" from="Player/AnimationPlayer" to="Player" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Player/AttackHitbox" to="Player" method="_on_attack_hitbox_body_entered"]

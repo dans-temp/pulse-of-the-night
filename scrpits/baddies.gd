@@ -4,7 +4,7 @@ var is_dead = false
 
 func _ready():
 	gravity_scale = 0
-	linear_velocity  = Vector2(-100, 0)
+	linear_velocity  = Vector2(-150, 0)
 	
 
 func hit():

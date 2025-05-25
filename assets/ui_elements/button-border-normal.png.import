@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw2ipu4qvefbk"
-path="res://.godot/imported/v-hunter-idle.png-79e66f5c5bccadb8a187d2b229843c3a.ctex"
+uid="uid://damkt65mg4owp"
+path="res://.godot/imported/button-border-normal.png-a89393ab0cd275a425e9bda8f9af382c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/v-hunter-idle.png"
-dest_files=["res://.godot/imported/v-hunter-idle.png-79e66f5c5bccadb8a187d2b229843c3a.ctex"]
+source_file="res://assets/ui_elements/button-border-normal.png"
+dest_files=["res://.godot/imported/button-border-normal.png-a89393ab0cd275a425e9bda8f9af382c.ctex"]
 
 [params]
 

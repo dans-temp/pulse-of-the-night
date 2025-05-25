@@ -1,5 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://druvo364odtom"]
+[gd_scene load_steps=32 format=3 uid="uid://druvo364odtom"]
 
+[ext_resource type="Script" uid="uid://bbdnggmj2i1ie" path="res://scrpits/title.gd" id="1_ah8jo"]
 [ext_resource type="Script" uid="uid://dvby3d1n03ow3" path="res://scrpits/title-parallax_background.gd" id="1_hiwto"]
 [ext_resource type="Texture2D" uid="uid://c82o8d1a7i4p4" path="res://assets/title-screen-sprites/1.png" id="1_wosw1"]
 [ext_resource type="Texture2D" uid="uid://bmbnfhwqkf41" path="res://assets/title-screen-sprites/2.png" id="2_p6dhs"]
@@ -15,6 +16,8 @@
 [ext_resource type="AudioStream" uid="uid://pq412hlspyat" path="res://assets/music/Blood Dance.mp3" id="13_7af2g"]
 [ext_resource type="Texture2D" uid="uid://ch0k67vl7cdhe" path="res://assets/title-screen-sprites/v-hunter-idle.png" id="13_81wt4"]
 [ext_resource type="Shader" uid="uid://sb6euy41te0q" path="res://shaders/sprite_silhouette.gdshader" id="13_kcc3o"]
+[ext_resource type="Theme" uid="uid://j0lbfeterbyj" path="res://assets/ui_elements/theme.tres" id="16_6rcc6"]
+[ext_resource type="AudioStream" uid="uid://c0phs18srpx38" path="res://assets/soundfx/option_move.mp3" id="18_blk4q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w65of"]
 shader = ExtResource("5_ygloa")
@@ -110,6 +113,7 @@ script = ExtResource("1_hiwto")
 motion_scale = Vector2(0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(2.06612, 1.90735e-06)
 texture = ExtResource("1_wosw1")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -203,3 +207,46 @@ autoplay = "idle"
 stream = ExtResource("13_7af2g")
 autoplay = true
 parameters/looping = true
+
+[node name="Menu Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 450.0
+offset_right = 1152.0
+offset_bottom = 644.0
+script = ExtResource("1_ah8jo")
+
+[node name="Options Button" type="Button" parent="Menu Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.513
+anchor_top = 0.642
+anchor_right = 0.513
+anchor_bottom = 0.642
+offset_left = -10.924
+offset_top = -32.548
+offset_right = 69.076
+offset_bottom = 17.452
+scale = Vector2(2, 2)
+theme = ExtResource("16_6rcc6")
+text = "Options"
+
+[node name="Start Button" type="Button" parent="Menu Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.513
+anchor_top = 0.642
+anchor_right = 0.513
+anchor_bottom = 0.642
+offset_left = -210.924
+offset_top = -32.548
+offset_right = -130.924
+offset_bottom = 17.452
+scale = Vector2(2, 2)
+theme = ExtResource("16_6rcc6")
+text = "Start"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Menu Buttons"]
+stream = ExtResource("18_blk4q")
+volume_db = -10.811

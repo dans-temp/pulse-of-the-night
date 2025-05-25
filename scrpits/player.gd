@@ -80,7 +80,7 @@ func _air_attack() -> void:
 	_attack('air')
 
 func _attack(attack_type) -> void:
-	#print("Player X: ", position.x, " Y: ", position.y)
+	print("Player X: ", position.x, " Y: ", position.y)
 
 	var this_attack_id
 #	#some jank to stop air attaks that slam ground from hitting ariel baddies
@@ -124,7 +124,7 @@ func _end_attack_cooldown() -> void:
 		
 
 func _on_animation_player_animation_finished(animation: String) -> void:
-	if $AnimatedSprite2D.animation == "attack" and attack_id == current_attack_id:
+	if $AnimatedSprite2D.animation == "attack" and attack_id == current_attack_id and is_on_floor():
 		is_attacking = false
 		$AnimatedSprite2D.play("run")
 

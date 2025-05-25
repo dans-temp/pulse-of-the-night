@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1l2it5ua7qta"
-path="res://.godot/imported/v-hunter-2.png-c43a2e0767497888b1145de0dda51124.ctex"
+uid="uid://dht5ulks8rvpn"
+path="res://.godot/imported/button-border-hovered.png-83f629a2f56b20e50725147f9f0f321f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/v-hunter-2.png"
-dest_files=["res://.godot/imported/v-hunter-2.png-c43a2e0767497888b1145de0dda51124.ctex"]
+source_file="res://assets/ui_elements/button-border-hovered.png"
+dest_files=["res://.godot/imported/button-border-hovered.png-83f629a2f56b20e50725147f9f0f321f.ctex"]
 
 [params]
 

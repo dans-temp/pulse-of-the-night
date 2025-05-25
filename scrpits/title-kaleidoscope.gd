@@ -1,7 +1,7 @@
 extends ColorRect
 
 
-@export var bpm = 120
+@export var bpm = 60
 @export var scale_amount = 1.2
 @export var pulse_duration = 0.1  # how fast it returns to normal
 
