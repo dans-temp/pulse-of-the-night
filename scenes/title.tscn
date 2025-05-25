@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://druvo364odtom"]
+[gd_scene load_steps=34 format=3 uid="uid://druvo364odtom"]
 
 [ext_resource type="Script" uid="uid://bbdnggmj2i1ie" path="res://scrpits/title.gd" id="1_ah8jo"]
 [ext_resource type="Script" uid="uid://dvby3d1n03ow3" path="res://scrpits/title-parallax_background.gd" id="1_hiwto"]
@@ -17,7 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://ch0k67vl7cdhe" path="res://assets/title-screen-sprites/v-hunter-idle.png" id="13_81wt4"]
 [ext_resource type="Shader" uid="uid://sb6euy41te0q" path="res://shaders/sprite_silhouette.gdshader" id="13_kcc3o"]
 [ext_resource type="Theme" uid="uid://j0lbfeterbyj" path="res://assets/ui_elements/theme.tres" id="16_6rcc6"]
+[ext_resource type="PackedScene" uid="uid://de7krnp327g2m" path="res://scenes/options_menu.tscn" id="16_fgbvm"]
 [ext_resource type="AudioStream" uid="uid://c0phs18srpx38" path="res://assets/soundfx/option_move.mp3" id="18_blk4q"]
+[ext_resource type="AudioStream" uid="uid://berjm6dk2bm77" path="res://assets/soundfx/chiptune_select.mp3" id="19_8magm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w65of"]
 shader = ExtResource("5_ygloa")
@@ -247,6 +249,17 @@ scale = Vector2(2, 2)
 theme = ExtResource("16_6rcc6")
 text = "Start"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Menu Buttons"]
+[node name="AudioOptionMove" type="AudioStreamPlayer" parent="Menu Buttons"]
 stream = ExtResource("18_blk4q")
 volume_db = -10.811
+
+[node name="AudioOptionSelect" type="AudioStreamPlayer" parent="Menu Buttons"]
+stream = ExtResource("19_8magm")
+volume_db = -7.0
+
+[node name="Options Menu" parent="." instance=ExtResource("16_fgbvm")]
+visible = false
+offset_left = 25.0
+offset_top = -6.0
+offset_right = 25.0
+offset_bottom = -6.0

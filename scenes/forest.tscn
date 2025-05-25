@@ -944,19 +944,19 @@ position = Vector2(20852, 446)
 position = Vector2(21535, 322)
 
 [node name="ghost41" parent="Baddies" instance=ExtResource("8_qm7rg")]
-position = Vector2(22169, 313)
+position = Vector2(22337, 297)
 
 [node name="ghost42" parent="Baddies" instance=ExtResource("8_qm7rg")]
-position = Vector2(22357, 306)
+position = Vector2(22474, 301)
 
 [node name="ghost49" parent="Baddies" instance=ExtResource("8_qm7rg")]
-position = Vector2(22549, 307)
+position = Vector2(22620, 304)
 
 [node name="ghost50" parent="Baddies" instance=ExtResource("8_qm7rg")]
-position = Vector2(22730, 305)
+position = Vector2(22753, 305)
 
 [node name="ghost51" parent="Baddies" instance=ExtResource("8_qm7rg")]
-position = Vector2(22901, 449)
+position = Vector2(22922, 443)
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(0, 400)

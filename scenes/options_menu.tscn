@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=3 uid="uid://de7krnp327g2m"]
+
+[ext_resource type="Script" uid="uid://dyq6ohxo4c3th" path="res://scrpits/options_menu.gd" id="1_ijpji"]
+[ext_resource type="Texture2D" uid="uid://c8hbhbroyp4hm" path="res://assets/ui_elements/button-border-no-middle-art.png" id="2_lfjc7"]
+[ext_resource type="AudioStream" uid="uid://vl02y7kub1de" path="res://assets/music/pause-theme.wav" id="3_hm4m4"]
+[ext_resource type="AudioStream" uid="uid://c0phs18srpx38" path="res://assets/soundfx/option_move.mp3" id="4_3xsyx"]
+[ext_resource type="AudioStream" uid="uid://berjm6dk2bm77" path="res://assets/soundfx/chiptune_select.mp3" id="5_dhn0l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ijpji"]
+texture = ExtResource("2_lfjc7")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[node name="Options Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(2, 2)
+script = ExtResource("1_ijpji")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -2.0
+offset_right = 585.0
+offset_bottom = 330.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0156863, 0.00392157, 0.172549, 0.764706)
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 17.0
+offset_right = 399.0
+offset_bottom = 299.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ijpji")
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -83.0
+offset_top = 15.0
+offset_right = 87.0
+offset_bottom = 92.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.972549, 0.670588, 0.152941, 1)
+theme_override_font_sizes/font_size = 32
+text = "Options"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 34.5
+offset_top = 66.0
+offset_right = 333.5
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.346517, 0.40013)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="Volume" type="HSlider" parent="Panel2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+value = 70.0
+ticks_on_borders = true
+
+[node name="MenuTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hm4m4")
+volume_db = -7.0
+
+[node name="OptionMove" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3xsyx")
+
+[node name="ChiptuneSelect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_dhn0l")
+volume_db = -7.0
+
+[connection signal="value_changed" from="Panel2/MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
