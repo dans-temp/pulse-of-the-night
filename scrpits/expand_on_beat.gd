@@ -1,7 +1,7 @@
 extends Sprite2D
 
 
-@export var bpm = 60
+@export var bpm = 80
 @export var scale_amount = 1.1
 @export var pulse_duration = 0.1  # how fast it returns to normal
 

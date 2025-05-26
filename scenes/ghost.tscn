@@ -187,7 +187,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pqta"]
-size = Vector2(16.5, 40.5)
+size = Vector2(16.5, 34.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_veat2"]
 size = Vector2(28, 84)
@@ -209,7 +209,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-8, 23)
+position = Vector2(-8, 28.75)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_4pqta")
 
@@ -219,6 +219,7 @@ volume_db = 8.0
 pitch_scale = 1.8
 
 [node name="Hitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(-11, 17)

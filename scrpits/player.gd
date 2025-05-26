@@ -13,6 +13,7 @@ var current_hang_id := 0
 var peak_jump_height := 0
 var is_hurt := false
 var in_attack_animation := false
+var is_invulnerable = false
 
 var is_hanging := false
 
@@ -68,6 +69,9 @@ func _start_hang_time() -> void:
 	is_hanging = false
 	
 func _jump_attack() -> void:
+	$"../Dust/JumpDust".global_position.x = global_position.x
+	$"../Dust/JumpDust".global_position.y = global_position.y
+	$"../Dust/JumpDust".play()
 	_start_attack_cooldown()
 	$UpperCutHitBox/CollisionShape2D3.disabled = false
 	await get_tree().create_timer(0.2).timeout
@@ -165,18 +169,40 @@ func _on_upper_cut_hit_box_body_entered(body: Node2D) -> void:
 
 
 func hurt():
+	if is_invulnerable:
+		return  # Ignore damage if invulnerable
+
+	is_invulnerable = true
 	can_attack = true
 	is_attacking = false
 	current_attack_id += 1
-	
+
 	is_hurt = true
 	$AnimatedSprite2D.play("hurt")
 	$AnimatedSprite2D.self_modulate = Color(10, 10, 10)
 	$AudioStreamPlayer2D.play()
+
+	# Start screen shake
+	start_screen_shake()
 
 	await get_tree().create_timer(0.10).timeout
 	$AnimatedSprite2D.self_modulate = Color(1, 1, 1, 1)
 
 	await get_tree().create_timer(0.20).timeout
 	is_hurt = false
-	
+
+	await get_tree().create_timer(0.05).timeout  # Remaining invulnerability time (0.25s total)
+	is_invulnerable = false
+
+
+func start_screen_shake():
+	var shake_amount = 4
+	var shake_time = 0.1
+
+	var cam = $Camera2D
+	var original_offset = cam.offset
+
+	# Do a quick shake using tween
+	var tween = create_tween()
+	tween.tween_property(cam, "offset", original_offset + Vector2(randf_range(-shake_amount, shake_amount), randf_range(-shake_amount, shake_amount)), shake_time / 2)
+	tween.tween_property(cam, "offset", original_offset, shake_time / 2)

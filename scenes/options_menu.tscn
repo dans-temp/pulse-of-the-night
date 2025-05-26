@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://de7krnp327g2m"]
+[gd_scene load_steps=7 format=3 uid="uid://he7am0wiop06"]
 
 [ext_resource type="Script" uid="uid://dyq6ohxo4c3th" path="res://scrpits/options_menu.gd" id="1_ijpji"]
 [ext_resource type="Texture2D" uid="uid://c8hbhbroyp4hm" path="res://assets/ui_elements/button-border-no-middle-art.png" id="2_lfjc7"]
