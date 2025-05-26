@@ -41,6 +41,7 @@ func _physics_process(delta):
 		_attack('')
 
 	move_and_slide()
+	
 
 func _jump():
 	velocity.y = jump_velocity  # Faster ascent

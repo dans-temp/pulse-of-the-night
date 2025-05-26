@@ -5,6 +5,7 @@ extends Control
 @onready var quit_button = $"Quit Button"
 @onready var options_menu_scene = $"../Options Menu"
 @onready var shader = load("res://shaders/sprite_silhouette.gdshader")
+@onready var baddies = $"../../Baddies"
 
 var current_selected_button: Button = null
 var mouse_pressed_button: Button = null
@@ -12,10 +13,12 @@ var mouse_hovering: bool = false
 var options_menu_open = false
 var ignore_input_for_one_frame = false
 var game_started = false
+var baddie_spawn_x: Array[float] = []
 
 var button_order: Array[Button] = []  # Array of buttons for nav
 
 func _ready():
+
 	$AudioOptionSelect.process_mode = Node.PROCESS_MODE_ALWAYS
 
 	var focus_owner = get_viewport().gui_get_focus_owner()
@@ -33,9 +36,34 @@ func _ready():
 	for button in button_order:
 		button.gui_input.connect(_on_button_gui_input.bind(button))
 		
-	
+		
+	# Apply silhouette shader to all baddies
+	for baddie in baddies.get_children():
+		var sprite = baddie.get_node_or_null("AnimatedSprite2D")
+		if sprite == null:
+			# Try searching recursively if it's nested
+			sprite = baddie.get_node_or_null("Sprite") or baddie.find_child("AnimatedSprite2D", true, false)
+		
+		if sprite and sprite is CanvasItem:
+			var shader_material = ShaderMaterial.new()
+			shader_material.shader = shader
+			sprite.material = shader_material
+			
+		# Freeze baddie by setting linear_velocity to zero
+		if baddie is CharacterBody2D:
+			baddie_spawn_x.append(baddie.position.x)
+			baddie.hide()
+
 
 func _process(delta):
+		# Open menu on escape
+	if Input.is_action_just_pressed("ui_cancel") and not options_menu_open:
+		if !ignore_input_for_one_frame:
+			$AudioOptionSelect.play()
+			_open_options_menu()
+		else:
+			ignore_input_for_one_frame = false
+		
 	if game_started:
 		return
 
@@ -64,15 +92,6 @@ func _process(delta):
 				"Quit Button":
 					_quit_game()
 
-	# Prevent input immediately after closing menu
-	if ignore_input_for_one_frame:
-		ignore_input_for_one_frame = false
-		return
-
-	# Open menu on cancel
-	if Input.is_action_just_pressed("ui_cancel") and not options_menu_open:
-		$AudioOptionSelect.play()
-		_open_options_menu()
 
 func _select_button(button: Button):
 	current_selected_button = button
@@ -105,6 +124,9 @@ func _open_options_menu():
 		get_tree().paused = true
 
 func _start_game():
+	if game_started:
+		return
+	game_started = true
 	$"../../Songs/TitleTheme".stop()
 	$AudioOptionSelect.play()
 	await get_tree().create_timer(0.20).timeout
@@ -113,7 +135,7 @@ func _start_game():
 	# Hide one background layer and the UI
 	$"../../ParallaxBackground/Title".hide()
 	hide()
-	game_started = true
+	
 
 	# Stop scrolling
 	$"../../TitleCamera".stop_scroll()
@@ -142,8 +164,7 @@ func _start_game():
 	var player_scene = preload("res://scenes/player.tscn")
 	var player = player_scene.instantiate()
 
-	# Optionally position the player where you want them to spawn
-	player.global_position = Vector2(2600.0, 480)  # Replace with your desired spawn position
+	player.global_position = Vector2(2600.0, 480)  # spawn position
 
 	# Add the player to the scene tree
 	get_tree().current_scene.add_child(player)
@@ -157,6 +178,15 @@ func _start_game():
 	# Make the player's camera active
 	var player_camera = player.get_node("Camera2D")
 	player_camera.make_current()
+	
+		# Restore positions to baddies
+	for i in baddies.get_child_count():
+		var baddie = baddies.get_child(i)
+		if baddie is CharacterBody2D:
+			baddie.position.x = baddie_spawn_x[i]
+			print(baddie.position.x)
+			baddie.show()
+
 	
 func _quit_game():
 	get_tree().quit()

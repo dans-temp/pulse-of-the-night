@@ -1,28 +1,36 @@
-extends RigidBody2D
+extends CharacterBody2D
 
+@export var speed := -60.0
 var is_dead = false
+var gravity := 1200.0  # Adjust as needed
 
 func _ready():
-	gravity_scale = 0
-	linear_velocity  = Vector2(-150, 0)
-	
+	# Start moving left
+	velocity = Vector2(speed, 0)
+
+func _physics_process(delta):
+	if not is_dead:
+		velocity.x = speed
+		velocity.y = 0
+	else:
+		velocity.y += gravity * delta  # Apply gravity when dead
+
+	move_and_slide()
 
 func hit():
-	# Disable collisions
 	if is_dead:
 		return
-		
+
 	is_dead = true
 	$Hitbox/CollisionShape2D.disabled = true
 
 	# Launch upward
-	linear_velocity = Vector2(-300, -500)
-	gravity_scale = 1
+	velocity = Vector2(-300, -500)
 
 	# Play sound and animation
 	$HitSound.play()
 	$AnimationPlayer.play("death")
-	
+
 	# Flash white for one frame
 	$AnimatedSprite2D.self_modulate = Color(10, 10, 10)
 	await get_tree().create_timer(0.15).timeout
@@ -32,15 +40,12 @@ func hit():
 	await $AnimationPlayer.animation_finished
 	queue_free()
 
-
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if is_dead:
 		return
 	if body.is_in_group("PlayerAttackHitbox"):
 		print("Ignore attack hitbox")
 		return
-
 	if body.is_in_group("Player"):
 		$Hitbox/CollisionShape2D.disabled = true
 		body.hurt()
-	

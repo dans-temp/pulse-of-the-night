@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=4 uid="uid://druvo364odtom"]
+[gd_scene load_steps=74 format=4 uid="uid://druvo364odtom"]
 
 [ext_resource type="Script" uid="uid://bbdnggmj2i1ie" path="res://scrpits/title.gd" id="1_ah8jo"]
 [ext_resource type="Texture2D" uid="uid://c82o8d1a7i4p4" path="res://assets/title-screen-sprites/1.png" id="1_wosw1"]
@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://wb11j063nehk" path="res://scrpits/title_camera.gd" id="22_pmcd8"]
 [ext_resource type="Texture2D" uid="uid://bptov8ip4oi8m" path="res://assets/tileset_tutorial.png" id="23_e75f2"]
 [ext_resource type="Texture2D" uid="uid://bdne7atnh1r14" path="res://assets/sprite_sheets/dust/jump_dust.png" id="24_wtvjo"]
+[ext_resource type="PackedScene" uid="uid://bgx0bcnj7l6jn" path="res://scenes/ghost.tscn" id="25_t8o15"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w65of"]
 shader = ExtResource("5_ygloa")
@@ -466,6 +467,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 500000, 269)
 
 [node name="Moon" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(7.85124, 0.413223)
 motion_scale = Vector2(0, 1)
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxBackground/Moon"]
@@ -511,6 +513,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 500000, 269)
 
 [node name="Title" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(7.02479, 0)
 motion_scale = Vector2(0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Title"]
@@ -523,7 +526,7 @@ motion_scale = Vector2(0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/Player"]
 material = SubResource("ShaderMaterial_6rcc6")
-position = Vector2(-4.54546, 24.7934)
+position = Vector2(0.41322, 24.7934)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_t8o15")
 animation = &"idle"
@@ -534,14 +537,14 @@ motion_scale = Vector2(0, 1)
 
 [node name="BackgroundWalkAnimation" type="AnimatedSprite2D" parent="ParallaxBackground/Doesnt move until game starts"]
 material = SubResource("ShaderMaterial_wtvjo")
-position = Vector2(14.0496, 137.603)
+position = Vector2(19.0083, 138.017)
 sprite_frames = SubResource("SpriteFrames_hxnlc")
 animation = &"bg_walk"
 centered = false
 offset = Vector2(-200, -270)
 
 [node name="Ground" type="Sprite2D" parent="ParallaxBackground/Doesnt move until game starts"]
-position = Vector2(108.264, 142.562)
+position = Vector2(111.157, 142.975)
 texture = ExtResource("8_7af2g")
 centered = false
 offset = Vector2(-350, -275)
@@ -578,10 +581,10 @@ libraries = {
 [node name="Menu Buttons" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -100.0
-offset_top = 445.0
-offset_right = 1048.0
-offset_bottom = 639.0
+offset_left = -78.0
+offset_top = 446.0
+offset_right = 1070.0
+offset_bottom = 640.0
 script = ExtResource("1_ah8jo")
 
 [node name="Options Button" type="Button" parent="CanvasLayer/Menu Buttons"]
@@ -667,3 +670,20 @@ material = SubResource("ShaderMaterial_t8o15")
 position = Vector2(-12.25, -0.25)
 sprite_frames = SubResource("SpriteFrames_opmo2")
 animation = &"jump_dust"
+
+[node name="Baddies" type="Node2D" parent="."]
+
+[node name="ghost" parent="Baddies" instance=ExtResource("25_t8o15")]
+position = Vector2(4212, 485)
+
+[node name="ghost2" parent="Baddies" instance=ExtResource("25_t8o15")]
+position = Vector2(6153, 485)
+
+[node name="ghost3" parent="Baddies" instance=ExtResource("25_t8o15")]
+position = Vector2(8330, 485)
+
+[node name="ghost4" parent="Baddies" instance=ExtResource("25_t8o15")]
+position = Vector2(10188, 485)
+
+[node name="ghost5" parent="Baddies" instance=ExtResource("25_t8o15")]
+position = Vector2(12203, 485)
