@@ -147,7 +147,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="Animation" id="Animation_pe3fk"]
@@ -219,7 +219,6 @@ volume_db = 8.0
 pitch_scale = 1.8
 
 [node name="Hitbox" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(-11, 17)

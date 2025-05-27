@@ -56,16 +56,16 @@ func _ready():
 
 
 func _process(delta):
-		# Open menu on escape
-	if Input.is_action_just_pressed("ui_cancel") and not options_menu_open:
-		if !ignore_input_for_one_frame:
-			$AudioOptionSelect.play()
-			_open_options_menu()
-		else:
-			ignore_input_for_one_frame = false
 		
 	if game_started:
 		return
+		
+	# Open menu on escape
+	if Input.is_action_just_pressed("ui_cancel") and not options_menu_open:
+		if !ignore_input_for_one_frame:
+			_open_options_menu()
+		else:
+			ignore_input_for_one_frame = false
 
 	# Handle left/right navigation
 	if Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right"):
@@ -156,10 +156,14 @@ func _start_game():
 	$"../../ParallaxBackground/ParallaxLayer3".motion_scale = Vector2(0.2, 1)
 	$"../../ParallaxBackground/ParallaxLayer5".motion_scale = Vector2(0.4, 1)
 	$"../../ParallaxBackground/ParallaxLayer6".motion_scale = Vector2(0.6, 1)
+	#	#stop moon pulseing on beat
+	$"../../ParallaxBackground/Moon/Sprite2D".pulsing_enabled = false 
+	$"../../ParallaxBackground/Moon/ColorRect".pulsing_enabled = false 
+	
 	$"../../CutsceneAnimation".play("start_cutscene")
 	
 	await get_tree().create_timer(5.0).timeout
-
+	
 	# Load and instance the Player scene
 	var player_scene = preload("res://scenes/player.tscn")
 	var player = player_scene.instantiate()
@@ -184,7 +188,6 @@ func _start_game():
 		var baddie = baddies.get_child(i)
 		if baddie is CharacterBody2D:
 			baddie.position.x = baddie_spawn_x[i]
-			print(baddie.position.x)
 			baddie.show()
 
 	

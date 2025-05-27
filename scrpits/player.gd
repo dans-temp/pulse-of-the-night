@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var options_menu_scene = $"../CanvasLayer/Options Menu"
+
 @export var speed := 500.0
 @export var gravity := 2500.0
 @export var jump_velocity := -842
@@ -14,6 +16,9 @@ var peak_jump_height := 0
 var is_hurt := false
 var in_attack_animation := false
 var is_invulnerable = false
+var options_menu_open = false
+var ignore_input_for_one_frame = false
+var overlapping_enemies: Array = []
 
 var is_hanging := false
 
@@ -31,6 +36,7 @@ func _physics_process(delta):
 
 	# Jump input
 	if Input.is_action_just_pressed("ui_up") and can_attack and not is_attacking:
+		print("Player X: ", position.x, " Y: ", position.y, 'AIR')
 		if is_on_floor():
 			_jump()
 		elif can_attack:
@@ -38,9 +44,18 @@ func _physics_process(delta):
 
 	# Attack input
 	if Input.is_action_just_pressed("ui_right") and can_attack and not is_attacking:
+		print("Player X: ", position.x, " Y: ", position.y, 'GROUND')
 		_attack('')
+		
+	# Open menu on escape
+	if Input.is_action_just_pressed("ui_cancel") and not options_menu_open:
+		if !ignore_input_for_one_frame:
+			_open_options_menu()
+		else:
+			ignore_input_for_one_frame = false
 
 	move_and_slide()
+	
 	
 
 func _jump():
@@ -85,7 +100,6 @@ func _air_attack() -> void:
 	_attack('air')
 
 func _attack(attack_type) -> void:
-	print("Player X: ", position.x, " Y: ", position.y)
 
 	var this_attack_id
 #	#some jank to stop air attaks that slam ground from hitting ariel baddies
@@ -136,24 +150,15 @@ func _on_animation_player_animation_finished(animation: String) -> void:
 
 func _on_attack_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Baddies"):
-		body.hit()
-		
-		# Spawn spark effect at point of contact
-		var spark_scene = preload("res://scenes/spark.tscn")
-		var spark = spark_scene.instantiate()
-		spark.global_position = body.global_position
-		spark.global_position.x + 20
-		get_tree().current_scene.add_child(spark)
-
-		# Reset attack and cancel cooldown timer
-		can_attack = true
-		is_attacking = false
-		current_attack_id += 1 
-		
+		overlapping_enemies.append(body)
+		# Delay to the next frame to gather all overlapping bodies
+		call_deferred("_process_closest_enemy_hit")		
 
 func _on_upper_cut_hit_box_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Baddies"):
-		body.hit()
+		overlapping_enemies.append(body)
+		# Delay to the next frame to gather all overlapping bodies
+		call_deferred("_process_closest_enemy_hit")
 		
 		_start_hang_time()
 		# Spawn spark effect at point of contact
@@ -166,6 +171,37 @@ func _on_upper_cut_hit_box_body_entered(body: Node2D) -> void:
 		can_attack = true
 		is_attacking = false
 		current_attack_id += 1 
+		
+func _process_closest_enemy_hit():
+	if overlapping_enemies.is_empty():
+		return
+
+	var closest_enemy: Node2D = null
+	var min_distance := INF
+
+	for enemy in overlapping_enemies:
+		if not is_instance_valid(enemy):
+			continue
+		var distance = global_position.distance_to(enemy.global_position)
+		if distance < min_distance:
+			min_distance = distance
+			closest_enemy = enemy
+
+	if closest_enemy:
+		closest_enemy.hit()
+
+		# Spawn spark effect at point of contact
+		var spark_scene = preload("res://scenes/spark.tscn")
+		var spark = spark_scene.instantiate()
+		spark.global_position = closest_enemy.global_position + Vector2(20, 0)
+		get_tree().current_scene.add_child(spark)
+
+		# Reset attack and cancel cooldown timer
+		_end_attack_cooldown()
+		current_attack_id += 1
+
+	# Clear for next attack
+	overlapping_enemies.clear()
 
 
 
@@ -207,3 +243,12 @@ func start_screen_shake():
 	var tween = create_tween()
 	tween.tween_property(cam, "offset", original_offset + Vector2(randf_range(-shake_amount, shake_amount), randf_range(-shake_amount, shake_amount)), shake_time / 2)
 	tween.tween_property(cam, "offset", original_offset, shake_time / 2)
+	
+	
+func _open_options_menu():
+	if not options_menu_open:
+		options_menu_scene.show_options_menu()
+		$"../CanvasLayer/Options Menu/ChiptuneSelect".play()
+		$"../CanvasLayer/Options Menu/MenuTheme".play()
+		options_menu_open = true
+		get_tree().paused = true

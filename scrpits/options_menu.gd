@@ -19,12 +19,20 @@ func show_options_menu():
 	ambient_loop.play()
 
 func _close_options_menu():
-	var menu_buttons = get_node("../Menu Buttons")
-	menu_buttons.ignore_input_for_one_frame = true
+	
+	var player = get_node_or_null("../../Player")
+	if player:
+		player.ignore_input_for_one_frame = true
+		player.options_menu_open = false
+	else:
+		var menu_buttons = get_node_or_null("../Menu Buttons")
+		if menu_buttons:
+			menu_buttons.ignore_input_for_one_frame = true
+			menu_buttons.options_menu_open = false
+
 	get_tree().paused = false
 	hide()
 	ambient_loop.stop()
-	menu_buttons.options_menu_open = false
 
 	
 func _on_volume_value_changed(value: float) -> void:

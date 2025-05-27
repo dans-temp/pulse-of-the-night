@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bwaduro0f8b3w" path="res://assets/sprite_sheets/v-hunter-attack-1.png" id="2_fjrip"]
 [ext_resource type="Texture2D" uid="uid://da0qkc8m4mhcw" path="res://assets/sprite_sheets/v-hunter-hurt.png" id="3_smehm"]
 [ext_resource type="Texture2D" uid="uid://2ugjdd2o2k7v" path="res://assets/sprite_sheets/v-hunter-jump.png" id="4_ur7pv"]
-[ext_resource type="Texture2D" uid="uid://j8dj64884spe" path="res://assets/testy test.png" id="5_y4r1p"]
+[ext_resource type="Texture2D" uid="uid://cplfmur05um3r" path="res://assets/sprite_sheets/v-hunter-run.png" id="5_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://efoxl68sjf0e" path="res://assets/soundfx/player_hit.wav" id="6_d2wvv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
@@ -67,25 +67,25 @@ region = Rect2(400, 0, 80, 64)
 atlas = ExtResource("4_ur7pv")
 region = Rect2(480, 0, 80, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3knxq"]
-atlas = ExtResource("5_y4r1p")
-region = Rect2(320, 0, 80, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sek5r"]
-atlas = ExtResource("5_y4r1p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("5_tuyoq")
 region = Rect2(0, 0, 80, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i1yi8"]
-atlas = ExtResource("5_y4r1p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("5_tuyoq")
 region = Rect2(80, 0, 80, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qm7rg"]
-atlas = ExtResource("5_y4r1p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
+atlas = ExtResource("5_tuyoq")
 region = Rect2(160, 0, 80, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0nboi"]
-atlas = ExtResource("5_y4r1p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
+atlas = ExtResource("5_tuyoq")
 region = Rect2(240, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
+atlas = ExtResource("5_tuyoq")
+region = Rect2(320, 0, 80, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_di0nb"]
 animations = [{
@@ -147,23 +147,23 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump",
-"speed": 20.0
+"speed": 18.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3knxq")
+"texture": SubResource("AtlasTexture_y4r1p")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sek5r")
+"texture": SubResource("AtlasTexture_d2wvv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i1yi8")
+"texture": SubResource("AtlasTexture_3v2ag")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qm7rg")
+"texture": SubResource("AtlasTexture_jej6c")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0nboi")
+"texture": SubResource("AtlasTexture_f1ej7")
 }],
 "loop": true,
 "name": &"run",
@@ -243,7 +243,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm7rg"]
-size = Vector2(23.25, 14.5)
+size = Vector2(20.625, 14.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3knxq"]
 size = Vector2(20.5, 21.5)
@@ -279,7 +279,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AttackHitbox" groups=["AttackHitBox"]]
-position = Vector2(28.5, 6.5)
+position = Vector2(29.8125, 6.5)
 shape = SubResource("RectangleShape2D_qm7rg")
 disabled = true
 

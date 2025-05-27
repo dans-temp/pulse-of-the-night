@@ -23,7 +23,10 @@ func hit():
 
 	is_dead = true
 	$Hitbox/CollisionShape2D.disabled = true
-
+	var moon = get_node_or_null("../../ParallaxBackground/Moon")
+	if moon:
+		moon.get_node("ColorRect").pulse()
+		moon.get_node("Sprite2D").pulse()
 	# Launch upward
 	velocity = Vector2(-300, -500)
 
