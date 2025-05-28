@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwaduro0f8b3w"
-path="res://.godot/imported/v-hunter-attack-1.png-508c83c0e1013f35771e8f9375bbe0d0.ctex"
+uid="uid://c8optil6wg223"
+path="res://.godot/imported/numbers-2.png-3170c0e53f95f38e6e9193c2be119476.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite_sheets/v-hunter-attack-1.png"
-dest_files=["res://.godot/imported/v-hunter-attack-1.png-508c83c0e1013f35771e8f9375bbe0d0.ctex"]
+source_file="res://assets/ui_elements/numbers-2.png"
+dest_files=["res://.godot/imported/numbers-2.png-3170c0e53f95f38e6e9193c2be119476.ctex"]
 
 [params]
 

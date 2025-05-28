@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8optil6wg223"
-path="res://.godot/imported/numbers-2.png-5ddf6a62e5f80c83c684d4573aa10c8e.ctex"
+uid="uid://2ugjdd2o2k7v"
+path="res://.godot/imported/v-hunter-jump.png-bf667fc95b1652d95c90f6744d794370.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/numbers-2.png"
-dest_files=["res://.godot/imported/numbers-2.png-5ddf6a62e5f80c83c684d4573aa10c8e.ctex"]
+source_file="res://assets/sprite_sheets/v-hunter/v-hunter-jump.png"
+dest_files=["res://.godot/imported/v-hunter-jump.png-bf667fc95b1652d95c90f6744d794370.ctex"]
 
 [params]
 

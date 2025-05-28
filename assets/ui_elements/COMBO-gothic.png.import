@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2ugjdd2o2k7v"
-path="res://.godot/imported/v-hunter-jump.png-f2fc46993351ba4c8b1e57419b34755d.ctex"
+uid="uid://usxo8yipggix"
+path="res://.godot/imported/COMBO-gothic.png-cc368516036f929fb2f179a55429d342.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite_sheets/v-hunter-jump.png"
-dest_files=["res://.godot/imported/v-hunter-jump.png-f2fc46993351ba4c8b1e57419b34755d.ctex"]
+source_file="res://assets/ui_elements/COMBO-gothic.png"
+dest_files=["res://.godot/imported/COMBO-gothic.png-cc368516036f929fb2f179a55429d342.ctex"]
 
 [params]
 

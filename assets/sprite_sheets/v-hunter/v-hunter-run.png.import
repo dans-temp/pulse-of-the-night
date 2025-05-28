@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw2ipu4qvefbk"
-path="res://.godot/imported/v-hunter-idle.png-76f37721501613328ca7fa5c4e9fbbb6.ctex"
+uid="uid://cplfmur05um3r"
+path="res://.godot/imported/v-hunter-run.png-f49c4d1a21273f1f5c2e9967c8dc6773.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite_sheets/v-hunter-idle.png"
-dest_files=["res://.godot/imported/v-hunter-idle.png-76f37721501613328ca7fa5c4e9fbbb6.ctex"]
+source_file="res://assets/sprite_sheets/v-hunter/v-hunter-run.png"
+dest_files=["res://.godot/imported/v-hunter-run.png-f49c4d1a21273f1f5c2e9967c8dc6773.ctex"]
 
 [params]
 

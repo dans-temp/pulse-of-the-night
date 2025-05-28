@@ -274,13 +274,13 @@ script = ExtResource("5_lk0tx")
 modulate = Color(0.907942, 0.907942, 0.907942, 1)
 position = Vector2(657, -229)
 scale = Vector2(2, 2)
-motion_scale = Vector2(0.05, 1)
+motion_scale = Vector2(0.025, 1)
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(-193.5, 163.5)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -288,7 +288,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(220, 183)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -296,7 +296,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(51, 168.5)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -304,7 +304,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(-163, 193)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -312,7 +312,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(-103.5, 130.5)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -320,7 +320,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(-187.5, 241.5)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -328,7 +328,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(456.5, 120.5)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -336,7 +336,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(702.5, 196)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -344,7 +344,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(533.5, 181.5)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -352,7 +352,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(319.5, 206)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -360,7 +360,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(379, 143.5)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -368,7 +368,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(282, 132.5)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -376,7 +376,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(1893, 213)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -384,7 +384,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(1288.5, 164)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -392,7 +392,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(1119.5, 149.5)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -400,7 +400,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(1962.5, 196)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -408,7 +408,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(965, 111.5)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -416,7 +416,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(881, 222.5)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -424,7 +424,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(1525, 101.5)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -432,7 +432,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(1771, 177)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -440,7 +440,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(1602, 162.5)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -448,7 +448,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(1388, 187)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -456,7 +456,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(1447.5, 124.5)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -464,7 +464,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(1350.5, 113.5)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -472,13 +472,13 @@ region_rect = Rect2(0, 0, 20000, 201)
 modulate = Color(0.894922, 0.894922, 0.894922, 1)
 position = Vector2(0, -80)
 scale = Vector2(2, 2)
-motion_scale = Vector2(0.15, 1)
+motion_scale = Vector2(0.08, 1)
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(220.5, 117)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -486,7 +486,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(415, 146.5)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -494,7 +494,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(78, 145)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -502,7 +502,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(1246.5, 95)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -510,7 +510,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(908, 141.5)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -518,7 +518,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(598, 171)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -526,7 +526,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(3140, 89.5)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -534,7 +534,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(3334.5, 119)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -542,7 +542,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(2997.5, 117.5)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -550,7 +550,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(4166, 67.5)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -558,7 +558,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(3827.5, 114)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -566,7 +566,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(3517.5, 143.5)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -574,7 +574,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(4930.5, 101.5)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -582,7 +582,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(5125, 131)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -590,7 +590,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(4788, 129.5)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -598,7 +598,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(5956.5, 79.5)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -606,7 +606,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(5618, 126)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -614,7 +614,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(5308, 155.5)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -622,7 +622,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(7850, 74)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -630,7 +630,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(8044.5, 103.5)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -638,7 +638,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(7707.5, 102)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -646,7 +646,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(8876, 52)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -654,7 +654,7 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(8537.5, 98.5)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
@@ -662,20 +662,20 @@ region_rect = Rect2(0, 0, 20000, 201)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(8227.5, 128)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(0, 0, 20000, 201)
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(0, -80)
 scale = Vector2(2, 2)
-motion_scale = Vector2(0.3, 1)
+motion_scale = Vector2(0.15, 1)
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(494, 171.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -683,7 +683,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(351.5, 126)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 
@@ -691,7 +691,7 @@ region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(117, 227)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -699,7 +699,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(830, 75.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 
@@ -707,7 +707,7 @@ region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(744.5, 133.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -715,7 +715,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(1438, 105.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -723,7 +723,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(1593.5, 10)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -731,7 +731,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(1942.5, 162.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 
@@ -739,7 +739,7 @@ region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(2176, 2.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -747,7 +747,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(4312, 98)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -755,7 +755,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(4169.5, 52.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 
@@ -763,7 +763,7 @@ region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(3935, 153.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -771,7 +771,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(4467.5, 2.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -779,7 +779,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(5256, 32)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -787,7 +787,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(6563.5, -1)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 
@@ -795,7 +795,7 @@ region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(4879, 87.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -803,7 +803,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(5389, -4.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -811,7 +811,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(5994, -71)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -819,7 +819,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(7283.5, 71.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 
@@ -827,7 +827,7 @@ region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(8043.5, 53.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 
@@ -835,7 +835,7 @@ region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(7809, 154.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -843,7 +843,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(8522, 3)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 
@@ -851,7 +851,7 @@ region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(9130, 33)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -859,7 +859,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(10437.5, 0)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 
@@ -867,7 +867,7 @@ region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(8753, 88.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -875,7 +875,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(9285.5, -62.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -883,7 +883,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(9634.5, 90)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 
@@ -891,7 +891,7 @@ region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(9868, -70)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -899,7 +899,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(11157.5, 72.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 
@@ -907,7 +907,7 @@ region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(11399.5, 134)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -915,7 +915,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(11842, 64.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 
@@ -923,7 +923,7 @@ region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(11627, 81)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -931,7 +931,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(12022.5, 152.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -939,7 +939,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(13156, 116)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 
@@ -947,7 +947,7 @@ region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(12181.5, 29)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -955,7 +955,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(12754, 180.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -963,7 +963,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(14255.5, -73.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 
@@ -971,7 +971,7 @@ region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(12577.5, 8)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -979,7 +979,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(12991, 2)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -987,7 +987,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(13452.5, 16.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 
@@ -995,7 +995,7 @@ region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(13686, -143.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(20, 0, 200, 0)
 
@@ -1003,7 +1003,7 @@ region_rect = Rect2(20, 0, 200, 0)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(14975.5, -1)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rjj26")
 region_rect = Rect2(-484.574, -461.004, 1198.88, 768.915)
 
@@ -1012,7 +1012,7 @@ scale = Vector2(3, 3)
 motion_scale = Vector2(0.97, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-modulate = Color(0.399896, 0.170088, 0.751161, 1)
+modulate = Color(0.87802, 0.477359, 0.721553, 1)
 texture_repeat = 2
 position = Vector2(3376.67, 70.6667)
 scale = Vector2(0.81, 0.81)

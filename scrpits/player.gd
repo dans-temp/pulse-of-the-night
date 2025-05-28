@@ -19,6 +19,8 @@ var is_invulnerable = false
 var options_menu_open = false
 var ignore_input_for_one_frame = false
 var overlapping_enemies: Array = []
+var attack_animation_index := 1
+const MAX_ATTACK_ANIMATIONS := 3
 
 var is_hanging := false
 
@@ -31,7 +33,8 @@ func _physics_process(delta):
 	
 	# Handle animations
 	if is_on_floor() and not is_attacking and not is_hurt:
-		if $AnimatedSprite2D.animation != "attack" or $AnimatedSprite2D.frame == $AnimatedSprite2D.sprite_frames.get_frame_count("attack") - 1:
+		if not $AnimatedSprite2D.animation.begins_with("attack") or \
+		   $AnimatedSprite2D.frame == $AnimatedSprite2D.sprite_frames.get_frame_count($AnimatedSprite2D.animation) - 1:
 			$AnimatedSprite2D.play("run")
 
 	# Jump input
@@ -114,10 +117,16 @@ func _attack(attack_type) -> void:
 		_start_attack_cooldown()
 		this_attack_id = attack_id
 	
-	if $AnimatedSprite2D.animation == "attack":
+	if $AnimatedSprite2D.animation.begins_with("attack"):
 		$AnimatedSprite2D.stop()
-		
-	$AnimatedSprite2D.play("attack")
+
+#   looping attack animations
+	var anim_name = "attack-%d" % attack_animation_index
+	$AnimatedSprite2D.play(anim_name)
+
+	attack_animation_index += 1
+	if attack_animation_index > MAX_ATTACK_ANIMATIONS:
+		attack_animation_index = 1
 
 	# Enable hitbox
 	$AttackHitbox/CollisionShape2D2.disabled = false
@@ -143,7 +152,7 @@ func _end_attack_cooldown() -> void:
 		
 
 func _on_animation_player_animation_finished(animation: String) -> void:
-	if $AnimatedSprite2D.animation == "attack" and attack_id == current_attack_id and is_on_floor():
+	if  $AnimatedSprite2D.animation.begins_with("attack") and attack_id == current_attack_id and is_on_floor():
 		is_attacking = false
 		$AnimatedSprite2D.play("run")
 

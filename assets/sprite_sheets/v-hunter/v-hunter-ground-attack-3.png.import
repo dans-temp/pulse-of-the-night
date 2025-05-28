@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cplfmur05um3r"
-path="res://.godot/imported/v-hunter-run.png-56bbffa16ab0ee10c495246ba20b656d.ctex"
+uid="uid://co73evfsrdfel"
+path="res://.godot/imported/v-hunter-ground-attack-3.png-2430e10df16b63c8158fcf3f4dae9ad5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite_sheets/v-hunter-run.png"
-dest_files=["res://.godot/imported/v-hunter-run.png-56bbffa16ab0ee10c495246ba20b656d.ctex"]
+source_file="res://assets/sprite_sheets/v-hunter/v-hunter-ground-attack-3.png"
+dest_files=["res://.godot/imported/v-hunter-ground-attack-3.png-2430e10df16b63c8158fcf3f4dae9ad5.ctex"]
 
 [params]
 
