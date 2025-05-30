@@ -5,7 +5,6 @@ var shake_strength := 5.0
 
 
 @export var scroll_speed = Vector2(30, 0)  # pixels per second
-@onready var camera = $Camera2D
 @onready var tilemap = $"../TileMapLayer"
 var scrolling := true
 

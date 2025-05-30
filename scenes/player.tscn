@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cnbowfmkicmvy"]
+[gd_scene load_steps=46 format=3 uid="uid://cnbowfmkicmvy"]
 
 [ext_resource type="Script" uid="uid://ca750cdx72mqe" path="res://scrpits/player.gd" id="1_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://di7jpssvnrey8" path="res://assets/sprite_sheets/v-hunter/v-hunter-ground-attack-2.png" id="2_smehm"]
@@ -279,77 +279,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1yi8"]
 size = Vector2(22.25, 41.625)
 
-[sub_resource type="Animation" id="Animation_i1yi8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"attack"]
-}
-
-[sub_resource type="Animation" id="Animation_di0nb"]
-resource_name = "attack"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"attack", &"attack"]
-}
-
-[sub_resource type="Animation" id="Animation_ercsu"]
-resource_name = "hurt"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"attack"]
-}
-
-[sub_resource type="Animation" id="Animation_3knxq"]
-resource_name = "jump"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"jump"]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pyn53"]
-_data = {
-&"RESET": SubResource("Animation_i1yi8"),
-&"attack": SubResource("Animation_di0nb"),
-&"hurt": SubResource("Animation_ercsu"),
-&"jump": SubResource("Animation_3knxq")
-}
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm7rg"]
-size = Vector2(20.625, 14.5)
+size = Vector2(25, 14.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3knxq"]
 size = Vector2(20.5, 21.5)
@@ -362,7 +293,7 @@ script = ExtResource("1_tuyoq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_di0nb")
-animation = &"attack"
+animation = &"jump"
 autoplay = "run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -375,17 +306,12 @@ drag_vertical_enabled = true
 drag_top_margin = 0.5
 drag_bottom_margin = 0.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_pyn53")
-}
-
 [node name="AttackHitbox" type="Area2D" parent="." groups=["AttackHitBox"]]
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AttackHitbox" groups=["AttackHitBox"]]
-position = Vector2(29.8125, 6.5)
+position = Vector2(29.5, 6.5)
 shape = SubResource("RectangleShape2D_qm7rg")
 disabled = true
 
@@ -403,6 +329,9 @@ stream = ExtResource("6_d2wvv")
 volume_db = 20.0
 pitch_scale = 0.7
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[node name="GroundCheck" type="RayCast2D" parent="."]
+target_position = Vector2(0, 100)
+collision_mask = 192
+
 [connection signal="body_entered" from="AttackHitbox" to="." method="_on_attack_hitbox_body_entered"]
 [connection signal="body_entered" from="UpperCutHitBox" to="." method="_on_upper_cut_hit_box_body_entered"]

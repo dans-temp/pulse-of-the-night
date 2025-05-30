@@ -49,7 +49,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_8qtol")
 }],
 "loop": false,
-"name": &"default",
+"name": &"spark",
 "speed": 30.0
 }]
 
@@ -60,4 +60,5 @@ script = ExtResource("1_vit8h")
 z_index = 2
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_x2ocf")
-autoplay = "default"
+animation = &"spark"
+autoplay = "spark"
