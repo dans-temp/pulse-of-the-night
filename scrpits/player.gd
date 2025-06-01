@@ -129,6 +129,9 @@ func _attack(attack_type = null) -> void:
 		is_hanging = false
 		current_hang_id += 1
 		await get_tree().create_timer(0.05).timeout
+		if this_attack_id != current_attack_id:
+			return
+
 	
 	if sprite.animation.begins_with("attack"):
 		sprite.stop()
@@ -161,9 +164,10 @@ func _start_attack_cooldown() -> int:
 	return attack_id
 	
 
-func _end_attack_cooldown() -> void:	
-	can_attack = true
-	is_attacking = false
+func _end_attack_cooldown() -> void:
+	if attack_id == current_attack_id:
+		can_attack = true
+		is_attacking = false
 		
 		
 func _on_attack_hitbox_body_entered(body: Node2D) -> void:
@@ -175,8 +179,9 @@ func _on_attack_hitbox_body_entered(body: Node2D) -> void:
 			call_deferred("_process_closest_enemy_hit")
 
 func _on_upper_cut_hit_box_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Baddies") and not is_on_floor():
-		_start_hang_time()
+	if body.is_in_group("Baddies"):
+		if not is_on_floor() and velocity.y < 800:
+			_start_hang_time()
 		overlapping_enemies.append(body)
 			
 		# Delay to the next frame to gather all overlapping bodies
@@ -187,29 +192,29 @@ func _on_upper_cut_hit_box_body_entered(body: Node2D) -> void:
 func _process_closest_enemy_hit():
 	if has_processed_hit or overlapping_enemies.is_empty() or hurt_last_frame:
 		return
-
+		
 	has_processed_hit = true
-
 	var closest_enemy: Node2D = null
 	var min_distance := INF
-
 	for enemy in overlapping_enemies:
 		if not is_instance_valid(enemy):
 			continue
 		if enemy.is_dead:
+			has_processed_hit = false
 			continue
 		var distance = global_position.distance_to(enemy.global_position)
 		if distance < min_distance:
 			min_distance = distance
 			closest_enemy = enemy
-
-	if closest_enemy:
+	
+	# Only execute hit logic if we found a valid living enemy
+	if closest_enemy and not closest_enemy.is_dead:  # Add the dead check here too
 		closest_enemy.hit()
 		combo_count += 1
 		combo_display_label.update_number_display(combo_count)
-
 		_end_attack_cooldown()
-
+		attack_id += 1
+		
 	# Clear for next attack
 	overlapping_enemies.clear()
 
@@ -225,8 +230,7 @@ func hurt():
 		_game_over()
 	
 	is_invulnerable = true
-	can_attack = true
-	is_attacking = false
+	_end_attack_cooldown()
 	current_attack_id += 1
 
 	is_hurt = true
@@ -277,8 +281,6 @@ func _game_over():
 	get_tree().paused = true
 
 	
-	
-
 #baddies call this when they break the combo
 func break_combo():
 	if combo_count > 0:

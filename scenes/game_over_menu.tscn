@@ -249,10 +249,10 @@ volume_db = -3.0
 [node name="Menu Buttons" type="Control" parent="FinalGameOver"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -61.0
-offset_top = 415.0
-offset_right = 1087.0
-offset_bottom = 609.0
+offset_left = -76.0
+offset_top = 403.0
+offset_right = 1072.0
+offset_bottom = 597.0
 
 [node name="RetryButton" type="Button" parent="FinalGameOver/Menu Buttons"]
 layout_mode = 1
@@ -261,9 +261,9 @@ anchor_left = 0.513
 anchor_top = 0.642
 anchor_right = 0.513
 anchor_bottom = 0.642
-offset_left = -288.924
+offset_left = -301.924
 offset_top = -32.548
-offset_right = -187.924
+offset_right = -200.924
 offset_bottom = 17.452
 scale = Vector2(2, 2)
 theme = ExtResource("4_81acl")
