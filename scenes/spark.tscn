@@ -62,3 +62,5 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_x2ocf")
 animation = &"spark"
 autoplay = "spark"
+frame = 5
+frame_progress = 1.0

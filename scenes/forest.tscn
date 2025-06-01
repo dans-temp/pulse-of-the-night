@@ -1,14 +1,17 @@
-[gd_scene load_steps=22 format=4 uid="uid://byt1wmrsf5iwp"]
+[gd_scene load_steps=26 format=4 uid="uid://byt1wmrsf5iwp"]
 
-[ext_resource type="Texture2D" uid="uid://3aadh0q7rp5i" path="res://assets/sky-9.jpg" id="1_sek5r"]
-[ext_resource type="Texture2D" uid="uid://cqpw0u3euo1kj" path="res://assets/mountain-range-pano-low-res.png" id="2_sek5r"]
-[ext_resource type="Texture2D" uid="uid://cbeiqy07kcmjf" path="res://assets/tree-range-1-sheet-extra-lowpoly-sheet.png" id="3_sek5r"]
-[ext_resource type="Texture2D" uid="uid://qcm0nts3qjyd" path="res://assets/tileset_forest-sheet-blue.png" id="5_xr56k"]
+[ext_resource type="Texture2D" uid="uid://3aadh0q7rp5i" path="res://assets/levelbackgounds/forest/sky-9.jpg" id="1_sek5r"]
+[ext_resource type="Texture2D" uid="uid://cqpw0u3euo1kj" path="res://assets/levelbackgounds/forest/mountain-range-pano-low-res.png" id="2_sek5r"]
+[ext_resource type="Texture2D" uid="uid://cbeiqy07kcmjf" path="res://assets/levelbackgounds/forest/tree-range-1-sheet-extra-lowpoly-sheet.png" id="3_sek5r"]
+[ext_resource type="Texture2D" uid="uid://qcm0nts3qjyd" path="res://assets/levelbackgounds/forest/tileset_forest-sheet-blue.png" id="5_xr56k"]
 [ext_resource type="PackedScene" uid="uid://cnbowfmkicmvy" path="res://scenes/player.tscn" id="6_qm7rg"]
 [ext_resource type="AudioStream" uid="uid://d4dhy1rq7m5px" path="res://assets/music/forest-theme.wav" id="8_0nboi"]
 [ext_resource type="PackedScene" uid="uid://bgx0bcnj7l6jn" path="res://scenes/ghost.tscn" id="8_qm7rg"]
 [ext_resource type="PackedScene" uid="uid://he7am0wiop06" path="res://scenes/options_menu.tscn" id="9_3knxq"]
+[ext_resource type="Texture2D" uid="uid://usxo8yipggix" path="res://assets/ui_elements/COMBO-gothic.png" id="10_ercsu"]
 [ext_resource type="Texture2D" uid="uid://bdne7atnh1r14" path="res://assets/sprite_sheets/dust/jump_dust.png" id="11_di0nb"]
+[ext_resource type="FontFile" uid="uid://bwhvsaia8ml84" path="res://assets/ui_elements/Ancient Medium.ttf" id="11_ercsu"]
+[ext_resource type="Script" uid="uid://l50kn8j2v55i" path="res://scrpits/heath_display.gd" id="14_cf55d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_len2l"]
 atlas = ExtResource("11_di0nb")
@@ -568,6 +571,8 @@ physics_layer_0/collision_layer = 192
 physics_layer_0/collision_mask = 192
 sources/0 = SubResource("TileSetAtlasSource_sek5r")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_j3csf"]
+
 [node name="Forest" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -1044,6 +1049,41 @@ volume_db = -3.0
 autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ComboDisplay" type="Node2D" parent="CanvasLayer"]
+
+[node name="Combo-gothic" type="Sprite2D" parent="CanvasLayer/ComboDisplay"]
+position = Vector2(833, 630)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("10_ercsu")
+
+[node name="ComboNumbers" type="RichTextLabel" parent="CanvasLayer/ComboDisplay"]
+clip_contents = false
+offset_left = 734.0
+offset_top = 545.0
+offset_right = 934.0
+offset_bottom = 645.0
+theme_override_colors/default_color = Color(0.976471, 0.682353, 0.184314, 1)
+theme_override_fonts/normal_font = ExtResource("11_ercsu")
+theme_override_font_sizes/normal_font_size = 68
+bbcode_enabled = true
+text = "[center]0[/center]"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="HealthDisplay" type="Node2D" parent="CanvasLayer"]
+position = Vector2(305, 616)
+scale = Vector2(2, 2)
+script = ExtResource("14_cf55d")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HealthDisplay"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HeartDamage" type="AnimatedSprite2D" parent="CanvasLayer/HealthDisplay"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_j3csf")
+autoplay = "default"
 
 [node name="Options Menu" parent="CanvasLayer" instance=ExtResource("9_3knxq")]
 visible = false

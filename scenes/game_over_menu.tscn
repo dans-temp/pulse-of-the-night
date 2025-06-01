@@ -1,0 +1,119 @@
+[gd_scene load_steps=5 format=3 uid="uid://c46v844phpjsn"]
+
+[ext_resource type="AudioStream" uid="uid://bt2pncedma5il" path="res://assets/music/gameover-theme.wav" id="1_ccgoi"]
+[ext_resource type="AudioStream" uid="uid://c0phs18srpx38" path="res://assets/soundfx/option_move.mp3" id="3_mvr4g"]
+[ext_resource type="Theme" uid="uid://j0lbfeterbyj" path="res://assets/ui_elements/theme.tres" id="4_81acl"]
+[ext_resource type="AudioStream" uid="uid://berjm6dk2bm77" path="res://assets/soundfx/chiptune_select.mp3" id="4_csn76"]
+
+[node name="GameOverMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -265.0
+offset_top = -174.0
+offset_right = 343.0
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0156863, 0.00392157, 0.172549, 0.764706)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -354.0
+offset_top = -187.0
+offset_right = -104.0
+offset_bottom = -87.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+theme_override_colors/default_color = Color(0.972549, 0.670588, 0.152941, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="GameOverTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_ccgoi")
+volume_db = -7.0
+autoplay = true
+
+[node name="OptionMove" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mvr4g")
+
+[node name="ChiptuneSelect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_csn76")
+volume_db = -7.0
+
+[node name="Menu Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -49.0
+offset_top = 277.0
+offset_right = 1099.0
+offset_bottom = 471.0
+
+[node name="LevelSelectButton" type="Button" parent="Menu Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.513
+anchor_top = 0.642
+anchor_right = 0.513
+anchor_bottom = 0.642
+offset_left = -28.924
+offset_top = -32.548
+offset_right = 74.076
+offset_bottom = 17.452
+scale = Vector2(2, 2)
+theme = ExtResource("4_81acl")
+text = "Select Level"
+
+[node name="RetryButton" type="Button" parent="Menu Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.513
+anchor_top = 0.642
+anchor_right = 0.513
+anchor_bottom = 0.642
+offset_left = -288.924
+offset_top = -32.548
+offset_right = -187.924
+offset_bottom = 17.452
+scale = Vector2(2, 2)
+theme = ExtResource("4_81acl")
+text = "Retry Level"
+
+[node name="TitleScreenButton" type="Button" parent="Menu Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.513
+anchor_top = 0.642
+anchor_right = 0.513
+anchor_bottom = 0.642
+offset_left = 231.076
+offset_top = -32.548
+offset_right = 337.076
+offset_bottom = 17.452
+scale = Vector2(2, 2)
+theme = ExtResource("4_81acl")
+text = "Title Screen"
+
+[node name="AudioOptionMove" type="AudioStreamPlayer" parent="Menu Buttons"]
+stream = ExtResource("3_mvr4g")
+volume_db = -10.811
+
+[node name="AudioOptionSelect" type="AudioStreamPlayer" parent="Menu Buttons"]
+stream = ExtResource("4_csn76")
+volume_db = -7.0

@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://d26g17f0cwvg6"]
+
+[ext_resource type="Texture2D" uid="uid://ei62nbxo7ddy" path="res://assets/ui_elements/heart-damage.png" id="1_va4lu"]
+[ext_resource type="Texture2D" uid="uid://cy46q266o3adc" path="res://assets/ui_elements/heart-empty.png" id="2_kh0qv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajl46"]
+atlas = ExtResource("1_va4lu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkpor"]
+atlas = ExtResource("1_va4lu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8aqeo"]
+atlas = ExtResource("1_va4lu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rflew"]
+atlas = ExtResource("1_va4lu")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4igr2"]
+atlas = ExtResource("1_va4lu")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pgly"]
+atlas = ExtResource("1_va4lu")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u41s"]
+atlas = ExtResource("1_va4lu")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1285a"]
+atlas = ExtResource("1_va4lu")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mloeq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajl46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkpor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8aqeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rflew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4igr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pgly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3u41s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1285a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kh0qv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 18.0
+}]
+
+[node name="EmptyHeart" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mloeq")
+autoplay = "default"
+frame = 8
+frame_progress = 1.0

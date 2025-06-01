@@ -1,8 +1,8 @@
 [gd_scene load_steps=18 format=4 uid="uid://b0qg3rt77ihi1"]
 
 [ext_resource type="Script" uid="uid://ca750cdx72mqe" path="res://scrpits/player.gd" id="1_iyx0m"]
-[ext_resource type="Texture2D" uid="uid://d27etv2aqmefw" path="res://assets/tileset_village.png" id="2_bl13t"]
-[ext_resource type="Texture2D" uid="uid://b2o68l3of8ffx" path="res://assets/sky-2.jpg" id="4_74lek"]
+[ext_resource type="Texture2D" uid="uid://d27etv2aqmefw" path="res://assets/levelbackgounds/tileset_village.png" id="2_bl13t"]
+[ext_resource type="Texture2D" uid="uid://b2o68l3of8ffx" path="res://assets/levelbackgounds/sky-2.jpg" id="4_74lek"]
 [ext_resource type="PackedScene" uid="uid://dddho5lhend5g" path="res://scenes/kaleidoscope_scene.tscn" id="5_j5jx5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5jx5"]

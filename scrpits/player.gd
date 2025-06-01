@@ -3,11 +3,15 @@ extends CharacterBody2D
 @onready var options_menu_scene = $"../CanvasLayer/Options Menu"
 @onready var ground_check := $GroundCheck
 @onready var sprite := $AnimatedSprite2D
+@onready var combo_display_number := $"../CanvasLayer/ComboDisplay/ComboNumbers"
+@onready var health_bar_display := $"../CanvasLayer/HealthDisplay"
 
 @export var speed := 500.0
 @export var gravity := 2500.0
 @export var jump_velocity := -842
 @export var attack_cooldown := 0.50 # seconds
+@export var max_hp := 4
+@export var current_hp := max_hp
 
 var can_attack := true
 var is_attacking := false
@@ -16,16 +20,18 @@ var attack_id := current_attack_id
 var current_hang_id := 0
 var peak_jump_height := 0
 var is_hurt := false
+var hurt_last_frame := false
 var in_attack_animation := false
 var is_invulnerable = false
 var options_menu_open = false
 var has_processed_hit: bool = false
 var ignore_input_for_one_frame = false
 var overlapping_enemies: Array = []
-var is_hit_scheduled := false
 var attack_animation_index := 1
 const MAX_ATTACK_ANIMATIONS := 3
 var is_hanging := false
+var combo_count := 0
+
 
 func _physics_process(delta):
 	if not is_hanging:
@@ -59,6 +65,9 @@ func _physics_process(delta):
 			_open_options_menu()
 		else:
 			ignore_input_for_one_frame = false
+			
+	if hurt_last_frame == true:
+		hurt_last_frame = false
 
 	move_and_slide()
 	
@@ -100,8 +109,8 @@ func _jump_attack() -> void:
 	$UpperCutHitBox/CollisionShape2D3.disabled = true
 	await get_tree().create_timer(attack_cooldown).timeout
 	
-	
-	if this_attack_id == current_attack_id:
+	#	add block and side hit box here too i think
+	if this_attack_id == current_attack_id and $AttackHitbox/CollisionShape2D2.disabled and $UpperCutHitBox/CollisionShape2D3.disabled:
 		_end_attack_cooldown()
 	
 func _air_attack() -> void:
@@ -112,15 +121,13 @@ func _attack(attack_type = null) -> void:
 
 	var this_attack_id
 	has_processed_hit = false
+	this_attack_id = _start_attack_cooldown()
 #	#some jank to stop air attaks that slam ground from hitting ariel baddies
 	if not is_on_floor() and attack_type != 'air':
 		velocity.y = 1500
 		is_hanging = false
 		current_hang_id += 1
-		this_attack_id = _start_attack_cooldown()
 		await get_tree().create_timer(0.05).timeout
-	else:
-		this_attack_id = _start_attack_cooldown()
 	
 	if sprite.animation.begins_with("attack"):
 		sprite.stop()
@@ -140,7 +147,8 @@ func _attack(attack_type = null) -> void:
 
 	# Cooldown duration
 	await get_tree().create_timer(attack_cooldown).timeout
-	if this_attack_id == current_attack_id:
+#	add block and side hit box here too i think
+	if this_attack_id == current_attack_id and $AttackHitbox/CollisionShape2D2.disabled and $UpperCutHitBox/CollisionShape2D3.disabled:
 		_end_attack_cooldown()
 
 
@@ -162,28 +170,24 @@ func _on_attack_hitbox_body_entered(body: Node2D) -> void:
 		overlapping_enemies.append(body)
 			
 		# Delay to the next frame to gather all overlapping bodies
-		if not is_hit_scheduled and not has_processed_hit:
-			is_hit_scheduled = true
+		if not has_processed_hit:
 			call_deferred("_process_closest_enemy_hit")
 
 func _on_upper_cut_hit_box_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Baddies"):
+	if body.is_in_group("Baddies") and not is_on_floor():
 		_start_hang_time()
 		overlapping_enemies.append(body)
 			
 		# Delay to the next frame to gather all overlapping bodies
-		if not is_hit_scheduled and not has_processed_hit:
-			is_hit_scheduled = true
+		if not has_processed_hit:
 			call_deferred("_process_closest_enemy_hit")
 		
 		
 func _process_closest_enemy_hit():
-	if has_processed_hit or overlapping_enemies.is_empty():
-		is_hit_scheduled = false
+	if has_processed_hit or overlapping_enemies.is_empty() or hurt_last_frame:
 		return
 
 	has_processed_hit = true
-	is_hit_scheduled = false
 
 	var closest_enemy: Node2D = null
 	var min_distance := INF
@@ -200,11 +204,8 @@ func _process_closest_enemy_hit():
 
 	if closest_enemy:
 		closest_enemy.hit()
-
-		var spark_scene = preload("res://scenes/spark.tscn")
-		var spark = spark_scene.instantiate()
-		spark.global_position = closest_enemy.global_position + Vector2(20, 0)
-		get_tree().current_scene.add_child(spark)
+		combo_count += 1
+		combo_display_number.bbcode_text  = "[center]%d[/center]" % combo_count
 
 		_end_attack_cooldown()
 
@@ -213,21 +214,30 @@ func _process_closest_enemy_hit():
 
 func hurt():
 	if is_invulnerable:
-		return  # Ignore damage if invulnerable
-
+		return
+		
+	current_hp -= 1
+	health_bar_display.update_hearts()
+	
+#	pauses and ends the scene
+	if current_hp == 0:
+		_game_over()
+	
 	is_invulnerable = true
 	can_attack = true
 	is_attacking = false
 	current_attack_id += 1
 
 	is_hurt = true
+	hurt_last_frame = true
 	sprite.play("hurt")
 	sprite.self_modulate = Color(10, 10, 10)
-	$AudioStreamPlayer2D.play()
+	$GotHitSound.play()
 
 	# Start screen shake
 	start_screen_shake()
-
+	
+	break_combo()
 	await get_tree().create_timer(0.10).timeout
 	sprite.self_modulate = Color(1, 1, 1, 1)
 
@@ -239,7 +249,7 @@ func hurt():
 
 
 func start_screen_shake():
-	var shake_amount = 4
+	var shake_amount = 8
 	var shake_time = 0.1
 
 	var cam = $Camera2D
@@ -258,3 +268,26 @@ func _open_options_menu():
 		$"../CanvasLayer/Options Menu/MenuTheme".play()
 		options_menu_open = true
 		get_tree().paused = true
+		
+		
+func _game_over():
+	print('GG')
+	
+	
+
+#baddies call this when they break the combo
+func break_combo():
+	if combo_count > 0:
+		combo_count = 0
+		combo_display_number.bbcode_text  = "[center]%d[/center]" % combo_count
+		shake_combo_text()
+
+
+func shake_combo_text():
+	var label = combo_display_number
+	var original_pos = label.position
+
+	var tween = get_tree().create_tween()
+	tween.tween_property(label, "position", original_pos + Vector2(6, 0), 0.05)
+	tween.tween_property(label, "position", original_pos - Vector2(6, 0), 0.05).set_delay(0.05)
+	tween.tween_property(label, "position", original_pos, 0.05).set_delay(0.10)
