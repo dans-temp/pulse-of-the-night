@@ -3,9 +3,10 @@ extends CharacterBody2D
 @onready var options_menu_scene = $"../CanvasLayer/Options Menu"
 @onready var ground_check := $GroundCheck
 @onready var sprite := $AnimatedSprite2D
+@onready var combo_display_label := $"../CanvasLayer/ComboDisplay"
 @onready var combo_display_number := $"../CanvasLayer/ComboDisplay/ComboNumbers"
 @onready var health_bar_display := $"../CanvasLayer/HealthDisplay"
-
+@onready var game_over_scene := $"../CanvasLayer/GameOverMenu"
 @export var speed := 500.0
 @export var gravity := 2500.0
 @export var jump_velocity := -842
@@ -33,7 +34,7 @@ var is_hanging := false
 var combo_count := 0
 
 
-func _physics_process(delta):
+func _physics_process(delta):		
 	if not is_hanging:
 		velocity.y += gravity * delta
 
@@ -53,7 +54,7 @@ func _physics_process(delta):
 		
 	# Jump input
 	elif Input.is_action_just_pressed("ui_up") and can_attack and not is_attacking:
-		#print("Player X: ", position.x, " Y: ", position.y, 'AIR')
+		print("Player X: ", position.x, " Y: ", position.y, 'AIR')
 		if is_on_floor():
 			_jump()
 		else:
@@ -205,7 +206,7 @@ func _process_closest_enemy_hit():
 	if closest_enemy:
 		closest_enemy.hit()
 		combo_count += 1
-		combo_display_number.bbcode_text  = "[center]%d[/center]" % combo_count
+		combo_display_label.update_number_display(combo_count)
 
 		_end_attack_cooldown()
 
@@ -220,7 +221,7 @@ func hurt():
 	health_bar_display.update_hearts()
 	
 #	pauses and ends the scene
-	if current_hp == 0:
+	if current_hp <= 0:
 		_game_over()
 	
 	is_invulnerable = true
@@ -271,7 +272,10 @@ func _open_options_menu():
 		
 		
 func _game_over():
-	print('GG')
+	game_over_scene.visible = true
+	game_over_scene.game_over_animation(position.y)
+	get_tree().paused = true
+
 	
 	
 
@@ -279,15 +283,5 @@ func _game_over():
 func break_combo():
 	if combo_count > 0:
 		combo_count = 0
-		combo_display_number.bbcode_text  = "[center]%d[/center]" % combo_count
-		shake_combo_text()
-
-
-func shake_combo_text():
-	var label = combo_display_number
-	var original_pos = label.position
-
-	var tween = get_tree().create_tween()
-	tween.tween_property(label, "position", original_pos + Vector2(6, 0), 0.05)
-	tween.tween_property(label, "position", original_pos - Vector2(6, 0), 0.05).set_delay(0.05)
-	tween.tween_property(label, "position", original_pos, 0.05).set_delay(0.10)
+		combo_display_label.update_number_display(combo_count)
+		combo_display_label.shake_combo_text()

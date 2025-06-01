@@ -20,6 +20,7 @@ var button_order: Array[Button] = []  # Array of buttons for nav
 func _ready():
 
 	$AudioOptionSelect.process_mode = Node.PROCESS_MODE_ALWAYS
+	
 
 	var focus_owner = get_viewport().gui_get_focus_owner()
 	if focus_owner:
@@ -53,6 +54,8 @@ func _ready():
 		if baddie is CharacterBody2D:
 			baddie_spawn_x.append(baddie.position.x)
 			baddie.hide()
+			
+	_select_button(start_button)
 
 
 func _process(delta):
@@ -91,6 +94,8 @@ func _process(delta):
 					_open_options_menu()
 				"Quit Button":
 					_quit_game()
+		else:
+			_select_button(start_button)
 
 
 func _select_button(button: Button):

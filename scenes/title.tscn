@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://druvo364odtom"]
+[gd_scene load_steps=79 format=4 uid="uid://druvo364odtom"]
 
 [ext_resource type="Script" uid="uid://bbdnggmj2i1ie" path="res://scrpits/title.gd" id="1_ah8jo"]
 [ext_resource type="Texture2D" uid="uid://c82o8d1a7i4p4" path="res://assets/levelbackgounds/title-screen/1.png" id="1_wosw1"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://usxo8yipggix" path="res://assets/ui_elements/COMBO-gothic.png" id="24_a4fnx"]
 [ext_resource type="Texture2D" uid="uid://bdne7atnh1r14" path="res://assets/sprite_sheets/dust/jump_dust.png" id="24_wtvjo"]
 [ext_resource type="FontFile" uid="uid://bwhvsaia8ml84" path="res://assets/ui_elements/Ancient Medium.ttf" id="25_75bkb"]
+[ext_resource type="Script" uid="uid://bq00j8rehl0ya" path="res://scrpits/combo_display.gd" id="25_cgg5c"]
 [ext_resource type="PackedScene" uid="uid://bgx0bcnj7l6jn" path="res://scenes/ghost.tscn" id="25_t8o15"]
 [ext_resource type="Script" uid="uid://l50kn8j2v55i" path="res://scrpits/heath_display.gd" id="26_cgg5c"]
 
@@ -566,13 +567,14 @@ tile_set = SubResource("TileSet_wtvjo")
 
 [node name="TitleTheme" type="AudioStreamPlayer" parent="Songs"]
 stream = ExtResource("13_7af2g")
+volume_db = -4.0
 pitch_scale = 0.85
 autoplay = true
 parameters/looping = true
 
 [node name="TutorialTheme" type="AudioStreamPlayer" parent="Songs"]
 stream = ExtResource("21_vjr5h")
-volume_db = -5.0
+volume_db = -3.0
 
 [node name="TitleCamera" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -668,8 +670,24 @@ offset_top = -6.0
 offset_right = 25.0
 offset_bottom = -6.0
 
+[node name="HealthDisplay" type="Node2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(305, 616)
+scale = Vector2(2, 2)
+script = ExtResource("26_cgg5c")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HealthDisplay"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HeartDamage" type="AnimatedSprite2D" parent="CanvasLayer/HealthDisplay"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_k1qkb")
+autoplay = "default"
+
 [node name="ComboDisplay" type="Node2D" parent="CanvasLayer"]
 visible = false
+script = ExtResource("25_cgg5c")
 
 [node name="Combo-gothic" type="Sprite2D" parent="CanvasLayer/ComboDisplay"]
 position = Vector2(833, 630)
@@ -686,24 +704,10 @@ theme_override_colors/default_color = Color(0.976471, 0.682353, 0.184314, 1)
 theme_override_fonts/normal_font = ExtResource("25_75bkb")
 theme_override_font_sizes/normal_font_size = 68
 bbcode_enabled = true
-text = "[center]0[/center]"
+text = "0"
 fit_content = true
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
-
-[node name="HealthDisplay" type="Node2D" parent="CanvasLayer"]
-visible = false
-position = Vector2(305, 616)
-scale = Vector2(2, 2)
-script = ExtResource("26_cgg5c")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HealthDisplay"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HeartDamage" type="AnimatedSprite2D" parent="CanvasLayer/HealthDisplay"]
-visible = false
-sprite_frames = SubResource("SpriteFrames_k1qkb")
-autoplay = "default"
 
 [node name="Dust" type="Node2D" parent="."]
 position = Vector2(13, 402)

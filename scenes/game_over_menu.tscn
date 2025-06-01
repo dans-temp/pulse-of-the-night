@@ -1,42 +1,239 @@
-[gd_scene load_steps=5 format=3 uid="uid://c46v844phpjsn"]
+[gd_scene load_steps=34 format=3 uid="uid://c46v844phpjsn"]
 
+[ext_resource type="Script" uid="uid://cg3smtnttkjpe" path="res://scrpits/game_over_menu.gd" id="1_7u104"]
 [ext_resource type="AudioStream" uid="uid://bt2pncedma5il" path="res://assets/music/gameover-theme.wav" id="1_ccgoi"]
+[ext_resource type="Texture2D" uid="uid://c0ddybbc5y2a1" path="res://assets/sprite_sheets/v-hunter/v-hunter-die.png" id="2_k8pbw"]
 [ext_resource type="AudioStream" uid="uid://c0phs18srpx38" path="res://assets/soundfx/option_move.mp3" id="3_mvr4g"]
 [ext_resource type="Theme" uid="uid://j0lbfeterbyj" path="res://assets/ui_elements/theme.tres" id="4_81acl"]
 [ext_resource type="AudioStream" uid="uid://berjm6dk2bm77" path="res://assets/soundfx/chiptune_select.mp3" id="4_csn76"]
+[ext_resource type="AudioStream" uid="uid://0uq5uyqnwos5" path="res://assets/soundfx/game_over.wav" id="6_mvr4g"]
+[ext_resource type="AudioStream" uid="uid://c3dgdsaf3s8ne" path="res://assets/soundfx/death_grunt.mp3" id="7_csn76"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1063w"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(2175, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8pbw"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(0, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nl4x"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(145, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdd2s"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(290, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqmx0"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(435, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w44qq"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(580, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o36v6"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(725, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfgkj"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(870, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20aeb"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(1015, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x10rb"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(1160, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01t4o"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(1305, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p03ky"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(1450, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtcu4"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(1595, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjtph"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(1740, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m78te"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(1885, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nh4qh"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(2030, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy627"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(2175, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmmep"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(2320, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdrhk"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(2465, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4aiwa"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(2610, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kclou"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(2755, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_med3r"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(2900, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwtsr"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(3045, 0, 145, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uouou"]
+atlas = ExtResource("2_k8pbw")
+region = Rect2(3190, 0, 145, 114)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o36v6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1063w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8pbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nl4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdd2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqmx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w44qq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o36v6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfgkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20aeb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x10rb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01t4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p03ky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtcu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjtph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m78te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nh4qh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy627")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmmep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdrhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4aiwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kclou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_med3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwtsr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uouou")
+}],
+"loop": false,
+"name": &"death",
+"speed": 8.0
+}]
 
 [node name="GameOverMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7u104")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -265.0
-offset_top = -174.0
-offset_right = 343.0
-offset_bottom = 158.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0156863, 0.00392157, 0.172549, 0.764706)
+[node name="GameOverCutscene" type="Node2D" parent="."]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="CutsceneBG" type="ColorRect" parent="GameOverCutscene"]
+offset_left = -9.0
+offset_top = -16.0
+offset_right = 31.0
+offset_bottom = 24.0
+scale = Vector2(29.44, 17.16)
+color = Color(0.0145066, 0.0034, 0.17, 1)
+
+[node name="DeadPlayer" type="AnimatedSprite2D" parent="GameOverCutscene"]
+visible = false
+position = Vector2(444, 423)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_o36v6")
+animation = &"death"
+
+[node name="DyingGrunt" type="AudioStreamPlayer" parent="GameOverCutscene"]
+stream = ExtResource("7_csn76")
+volume_db = -17.0
+pitch_scale = 0.85
+
+[node name="FinalGameOver" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FinalGameOver"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -354.0
-offset_top = -187.0
-offset_right = -104.0
-offset_bottom = -87.0
+offset_left = 181.0
+offset_top = 117.0
+offset_right = 431.0
+offset_bottom = 217.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
@@ -45,42 +242,19 @@ theme_override_font_sizes/normal_font_size = 40
 text = "GAME OVER"
 horizontal_alignment = 1
 
-[node name="GameOverTheme" type="AudioStreamPlayer" parent="."]
+[node name="GameOverTheme" type="AudioStreamPlayer" parent="FinalGameOver"]
 stream = ExtResource("1_ccgoi")
-volume_db = -7.0
-autoplay = true
+volume_db = -3.0
 
-[node name="OptionMove" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_mvr4g")
-
-[node name="ChiptuneSelect" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_csn76")
-volume_db = -7.0
-
-[node name="Menu Buttons" type="Control" parent="."]
+[node name="Menu Buttons" type="Control" parent="FinalGameOver"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -49.0
-offset_top = 277.0
-offset_right = 1099.0
-offset_bottom = 471.0
+offset_left = -61.0
+offset_top = 415.0
+offset_right = 1087.0
+offset_bottom = 609.0
 
-[node name="LevelSelectButton" type="Button" parent="Menu Buttons"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.513
-anchor_top = 0.642
-anchor_right = 0.513
-anchor_bottom = 0.642
-offset_left = -28.924
-offset_top = -32.548
-offset_right = 74.076
-offset_bottom = 17.452
-scale = Vector2(2, 2)
-theme = ExtResource("4_81acl")
-text = "Select Level"
-
-[node name="RetryButton" type="Button" parent="Menu Buttons"]
+[node name="RetryButton" type="Button" parent="FinalGameOver/Menu Buttons"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.513
@@ -95,7 +269,22 @@ scale = Vector2(2, 2)
 theme = ExtResource("4_81acl")
 text = "Retry Level"
 
-[node name="TitleScreenButton" type="Button" parent="Menu Buttons"]
+[node name="LevelSelectButton" type="Button" parent="FinalGameOver/Menu Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.513
+anchor_top = 0.642
+anchor_right = 0.513
+anchor_bottom = 0.642
+offset_left = -28.924
+offset_top = -32.548
+offset_right = 74.076
+offset_bottom = 17.452
+scale = Vector2(2, 2)
+theme = ExtResource("4_81acl")
+text = "Select Level"
+
+[node name="TitleScreenButton" type="Button" parent="FinalGameOver/Menu Buttons"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.513
@@ -110,10 +299,14 @@ scale = Vector2(2, 2)
 theme = ExtResource("4_81acl")
 text = "Title Screen"
 
-[node name="AudioOptionMove" type="AudioStreamPlayer" parent="Menu Buttons"]
+[node name="AudioOptionMove" type="AudioStreamPlayer" parent="FinalGameOver/Menu Buttons"]
 stream = ExtResource("3_mvr4g")
 volume_db = -10.811
 
-[node name="AudioOptionSelect" type="AudioStreamPlayer" parent="Menu Buttons"]
+[node name="AudioOptionSelect" type="AudioStreamPlayer" parent="FinalGameOver/Menu Buttons"]
 stream = ExtResource("4_csn76")
 volume_db = -7.0
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="FinalGameOver"]
+stream = ExtResource("6_mvr4g")
+pitch_scale = 1.34

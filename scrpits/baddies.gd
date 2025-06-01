@@ -66,5 +66,5 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		return
 	if body.is_in_group("Player"):
 		already_hit_player = true
-		$Hitbox/CollisionShape2D.disabled = true
+		$Hitbox/CollisionShape2D.set_deferred("disabled", true)
 		body.hurt()
