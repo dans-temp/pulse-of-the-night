@@ -277,7 +277,7 @@ func _open_options_menu():
 		
 func _game_over():
 	game_over_scene.visible = true
-	game_over_scene.game_over_animation(position.y)
+	game_over_scene.game_over_animation(position, $Camera2D)
 	get_tree().paused = true
 
 	

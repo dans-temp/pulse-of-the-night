@@ -92,7 +92,7 @@ func _on_button_gui_input(event: InputEvent, button: Button):
 			mouse_pressed_button = null
 			
 			
-func game_over_animation(player_y):
+func game_over_animation(player_position, camera):
 	$FinalGameOver/GameOverSound.play()
 	var cutscene_bg = $GameOverCutscene/CutsceneBG
 	var dead_player = $GameOverCutscene/DeadPlayer
@@ -102,8 +102,12 @@ func game_over_animation(player_y):
 	var tween = create_tween()
 	tween.tween_property(cutscene_bg, "modulate:a", 1.0, 0.8)
 	await get_tree().create_timer(1).timeout
+
+	# Convert player world position to screen space
+	var canvas_transform = get_viewport().get_canvas_transform()
+	var screen_position = (canvas_transform * player_position) + Vector2(70, -45)
+	dead_player.position = screen_position
 	
-	dead_player.position.y = player_y - 25
 	dead_player.modulate.a = 0.2
 	var tween0 = create_tween()
 	tween0.tween_property(dead_player, "modulate:a", 1.0, 0.5)

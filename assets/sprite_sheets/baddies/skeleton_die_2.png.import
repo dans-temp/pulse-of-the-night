@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t3l1hdrfb0xg"
-path="res://.godot/imported/ghost-Vanish.png-0db372142eaab16cb32291814bd070f8.ctex"
+uid="uid://333uu4qxstqi"
+path="res://.godot/imported/skeleton_die_2.png-d39667871a89607dbad94cdd1e41473b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite_sheets/ghost-Vanish.png"
-dest_files=["res://.godot/imported/ghost-Vanish.png-0db372142eaab16cb32291814bd070f8.ctex"]
+source_file="res://assets/sprite_sheets/baddies/skeleton_die_2.png"
+dest_files=["res://.godot/imported/skeleton_die_2.png-d39667871a89607dbad94cdd1e41473b.ctex"]
 
 [params]
 

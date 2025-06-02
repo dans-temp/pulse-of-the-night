@@ -26,7 +26,8 @@ func _physics_process(delta):
 			player.break_combo()
 		
 	else:
-		velocity.y += gravity * delta  # Apply gravity when dead
+		if "ghost" in name:
+			velocity.y += gravity * delta  # Apply gravity when dead
 
 	move_and_slide()
 	
@@ -46,7 +47,8 @@ func hit():
 		moon.get_node("ColorRect").pulse()
 		moon.get_node("Sprite2D").pulse()
 	# Launch upward
-	velocity = Vector2(-300, -500)
+	if "ghost" in name:
+		velocity = Vector2(-300, -500)
 
 	# Play sound and animation
 	$HitSound.play()

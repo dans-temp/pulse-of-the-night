@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xcwwqv5lybsh"
-path="res://.godot/imported/ghost-Chase.png-5f6b68dfceea9870ed35c372bff6b19a.ctex"
+uid="uid://t3l1hdrfb0xg"
+path="res://.godot/imported/ghost-Vanish.png-f193848bb116954a74ce6009e9362a43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite_sheets/ghost-Chase.png"
-dest_files=["res://.godot/imported/ghost-Chase.png-5f6b68dfceea9870ed35c372bff6b19a.ctex"]
+source_file="res://assets/sprite_sheets/baddies/ghost-Vanish.png"
+dest_files=["res://.godot/imported/ghost-Vanish.png-f193848bb116954a74ce6009e9362a43.ctex"]
 
 [params]
 

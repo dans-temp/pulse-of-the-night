@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2pwcv5rkf2br"
-path="res://.godot/imported/ghost-Idle-sheet.png-24b8e31d7617e9357d44ca4e0baf53b3.ctex"
+uid="uid://xcwwqv5lybsh"
+path="res://.godot/imported/ghost-Chase.png-aacd78fe5471df8631d9204fd4f2660d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite_sheets/ghost-Idle-sheet.png"
-dest_files=["res://.godot/imported/ghost-Idle-sheet.png-24b8e31d7617e9357d44ca4e0baf53b3.ctex"]
+source_file="res://assets/sprite_sheets/baddies/ghost-Chase.png"
+dest_files=["res://.godot/imported/ghost-Chase.png-aacd78fe5471df8631d9204fd4f2660d.ctex"]
 
 [params]
 

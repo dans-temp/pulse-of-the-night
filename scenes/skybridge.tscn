@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://v5ysfvnme0r6"]
+[gd_scene load_steps=34 format=4 uid="uid://v5ysfvnme0r6"]
 
 [ext_resource type="Texture2D" uid="uid://jxxcfxh0m82n" path="res://assets/levelbackgounds/skybridge/castle-sky.png" id="1_bhhei"]
 [ext_resource type="Shader" uid="uid://evepjf3e3cxi" path="res://scrpits/kaleidoscope_scene.gdshader" id="2_06l04"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://usxo8yipggix" path="res://assets/ui_elements/COMBO-gothic.png" id="12_1rs08"]
 [ext_resource type="Script" uid="uid://bq00j8rehl0ya" path="res://scrpits/combo_display.gd" id="12_ltuga"]
 [ext_resource type="PackedScene" uid="uid://he7am0wiop06" path="res://scenes/options_menu.tscn" id="12_ro3is"]
+[ext_resource type="PackedScene" uid="uid://clpppeo2fypug" path="res://scenes/skeleton.tscn" id="12_u37op"]
 [ext_resource type="FontFile" uid="uid://bwhvsaia8ml84" path="res://assets/ui_elements/Ancient Medium.ttf" id="13_ltuga"]
 [ext_resource type="AudioStream" uid="uid://chyg7502dsd0l" path="res://assets/music/castle-theme.wav" id="13_v5mc7"]
 [ext_resource type="Script" uid="uid://l50kn8j2v55i" path="res://scrpits/heath_display.gd" id="14_lw7og"]
@@ -1500,6 +1501,9 @@ position = Vector2(1752, 395)
 [node name="ghost126" parent="Baddies" instance=ExtResource("11_2y42j")]
 position = Vector2(1903, 398)
 
+[node name="skeleton" parent="Baddies" instance=ExtResource("12_u37op")]
+position = Vector2(5537, 411)
+
 [node name="ghost127" parent="Baddies" instance=ExtResource("11_2y42j")]
 position = Vector2(1826, 253)
 
@@ -1539,10 +1543,8 @@ offset_bottom = 40.0
 
 [node name="GameOverMenu" parent="CanvasLayer" instance=ExtResource("16_lw7og")]
 visible = false
-offset_left = -2.0
-offset_top = -2.0
-offset_right = -2.0
-offset_bottom = -2.0
+offset_right = -1152.0
+offset_bottom = -648.0
 
 [node name="Options Menu" parent="CanvasLayer" instance=ExtResource("12_ro3is")]
 visible = false
